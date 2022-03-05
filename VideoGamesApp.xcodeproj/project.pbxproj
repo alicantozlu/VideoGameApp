@@ -17,6 +17,8 @@
 		C66E09B127D3D8A100D3BDB2 /* UserLongInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B027D3D8A100D3BDB2 /* UserLongInViewController.swift */; };
 		C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */; };
 		C66E09B527D3DB4B00D3BDB2 /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */; };
+		C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */; };
+		C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C66E09B027D3D8A100D3BDB2 /* UserLongInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLongInViewController.swift; sourceTree = "<group>"; };
 		C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
+		C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedGamesViewController.swift; sourceTree = "<group>"; };
+		C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				C66E09B027D3D8A100D3BDB2 /* UserLongInViewController.swift */,
 				C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */,
 				C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */,
+				C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */,
+				C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,8 +184,10 @@
 				C66E09B527D3DB4B00D3BDB2 /* GameScreenViewController.swift in Sources */,
 				C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */,
 				C66E09B127D3D8A100D3BDB2 /* UserLongInViewController.swift in Sources */,
+				C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */,
 				C66E099F27D3D81800D3BDB2 /* VideoGamesApp.xcdatamodeld in Sources */,
 				C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */,
+				C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */,
 				C66E09AF27D3D88A00D3BDB2 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
