@@ -12,18 +12,24 @@ class GameListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tabbarConfig()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func tabbarConfig() {
+        guard let tabBar = tabBarController?.tabBar else { return }
+        tabBar.isTranslucent = true
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage() // add this if you want remove tabBar separator
+        tabBar.barTintColor = .clear
+        tabBar.backgroundColor = .clear // here is your tabBar color
+        tabBar.layer.backgroundColor = UIColor.clear.cgColor
+        let blurEffect = UIBlurEffect(style: .light) // here you can change blur style
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = tabBar.bounds
+        blurView.autoresizingMask = .flexibleWidth
+        tabBar.insertSubview(blurView, at: 0)
+        
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .darkGray
     }
-    */
-
 }
