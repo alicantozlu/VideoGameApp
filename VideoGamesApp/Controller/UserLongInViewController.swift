@@ -9,21 +9,20 @@ import UIKit
 
 class UserLongInViewController: UIViewController {
 
+    @IBOutlet var userNameTxtFld: UITextField!
+    @IBOutlet var userPasswordTxtFld: UITextField!
+    @IBOutlet var logInBtn: UIButton!
+    @IBOutlet var registerBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logInBtnTapped(_ sender: Any) {
+        let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarIdentity") as! UITabBarController
+        tabBarVC.modalTransitionStyle = .flipHorizontal
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true, completion: nil)
     }
-    */
-
 }
