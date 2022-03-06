@@ -204,14 +204,26 @@
                                             <constraint firstAttribute="trailing" secondItem="Hbj-Tw-2ss" secondAttribute="trailing" id="cuP-B3-jso"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JRJ-9T-WIR">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-YP-Zll">
                                         <rect key="frame" x="0.0" y="310" width="414" height="459"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="rnW-lR-1JL" id="Ksi-2j-JBX"/>
-                                            <outlet property="delegate" destination="rnW-lR-1JL" id="N5T-vG-sUK"/>
-                                        </connections>
-                                    </tableView>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVN-e8-VuI">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bottomCellIdentıty" id="VKD-ci-ncJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lCc-BD-Zg0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="p3g-6W-ZkG" firstAttribute="leading" secondItem="TzB-ZM-vzX" secondAttribute="leading" id="1Q9-Uf-SJW"/>
@@ -233,7 +245,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home_32" selectedImage="home_32" id="3Y7-J2-qZi"/>
                     <connections>
-                        <outlet property="bottomTableView" destination="JRJ-9T-WIR" id="pON-ZB-b0Y"/>
                         <outlet property="topCollectionView" destination="BUn-db-5jv" id="Vpt-JU-OG2"/>
                     </connections>
                 </viewController>
