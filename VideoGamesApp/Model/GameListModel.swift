@@ -7,39 +7,36 @@
 
 import Foundation
 
-enum GameListError: Error {
+enum ErrorList: Error {
     case noDataAvailable
     case canNotProcessData
 }
+
 struct GameListRequest{
 
     let resourceURL: URL
 
     init(){
-        let gameListString = "https://api.rawg.io/api/games?key=9718fac0b2cd44f5958788cabc198237"
-
-        //MARK: 1. Create URL
-        guard let gameListURL = URL(string: gameListString) else {
-            fatalError("Error")
-        }
-        self.resourceURL = gameListURL
-        //performRequest(url: resourceURL)
+        let apiString = "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1"
+        guard let apiURL = URL(string: apiString) else { fatalError("Error") }
+        self.resourceURL = apiURL
     }
 
-    func getGames(completion: @escaping(Result<GameModel, GameListError>) -> Void) {
+    func getGames(completion: @escaping(Result<GameDataModel, ErrorList>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, response, error in
             guard let jsonData = data else {
-                print("çekilemedi")
+                
+            //TODO: Enumdan donun hataya gore spesifik hata mesaji yazdir
+                print("Fetch Error")
                 return
             }
-
             do {
                 let decoder = JSONDecoder()
-                let games = try decoder.decode(GameModel.self, from: jsonData)
+                let games = try decoder.decode(GameDataModel.self, from: jsonData)
                 completion(.success(games))
-                print("başarılı")
+                print("Fetch Success")
             }catch{
-                print("json decode errror")
+                print("Json Decode Error")
             }
         }
         dataTask.resume()

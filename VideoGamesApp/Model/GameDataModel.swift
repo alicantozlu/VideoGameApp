@@ -8,9 +8,12 @@
 import Foundation
 
 struct GameDataModel: Decodable {
-    let resul: [GameModel]?
+    let results: [GameInfoModel]?
 }
 
-struct GameModel: Decodable {
-    
+struct GameInfoModel: Decodable{
+    let name: String?
+    let released: String?
+    let background_image: String?
+    let rating: Double?
 }

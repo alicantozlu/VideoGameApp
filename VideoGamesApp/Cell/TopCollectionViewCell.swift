@@ -13,7 +13,5 @@ class TopCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-
 }

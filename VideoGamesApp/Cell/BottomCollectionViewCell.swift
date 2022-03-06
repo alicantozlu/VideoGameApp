@@ -13,5 +13,8 @@ class BottomCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func configure(model: GameInfoModel){
+        
+    }
 }

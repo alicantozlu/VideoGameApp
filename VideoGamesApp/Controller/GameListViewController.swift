@@ -10,27 +10,37 @@ import UIKit
 class GameListViewController: UIViewController {
     
     @IBOutlet var topCollectionView: UICollectionView!
-    @IBOutlet var bottomTableView: UITableView!
+    @IBOutlet var bottomCollectionView: UICollectionView!
     
-    var topGameList = [TopCellModel]()
-    var bottomGameList = [BottomCellModel]()
+    var gameList = [GameInfoModel](){
+        didSet {
+            // Array icerisine veri degisimi olursa tablolar guncellenmesi icin
+            DispatchQueue.main.async {
+                self.topCollectionView.reloadData()
+                self.bottomCollectionView.reloadData()
+            }
+        }
+    }
     
+    let gameListRequest = GameListRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabbarConfig()
         
+        gameListRequest.getGames { result in
+            do {
+                self.gameList = try result.get().results!
+            }catch let error {
+                print(error)
+            }
+        }
+        
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
-        
-        bottomTableView.register(UINib(nibName: "BottomTableViewCell", bundle: nil), forCellReuseIdentifier: "bottomCell")
-        self.bottomTableView.rowHeight = 223
-        
-        
-        
-        
+        bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
     }
     
-    // TabBar ozellestirmeleri
+    // TabBar Ozellestirmeleri
     private func tabbarConfig() {
         guard let tabBar = tabBarController?.tabBar else { return }
         tabBar.isTranslucent = true
@@ -49,14 +59,39 @@ class GameListViewController: UIViewController {
     }
 }
 
-extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == topCollectionView{
+            return CGSize(width: self.view.bounds.width, height: 150)
+        } else {
+            return CGSize(width: self.view.bounds.width, height: 150)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        if collectionView == topCollectionView{
+            return 3
+        } else {
+            return gameList.count
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
-        return cell
+        
+        if collectionView == topCollectionView{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
+            
+            cell.gameImageView.loadFrom(URLAddress: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell
+            
+            
+            
+            cell.backgroundColor = .blue
+            return cell
+        }
     }
-}
-
 }

@@ -26,6 +26,7 @@
 		C6DF66D527D4EA9E00ED2C35 /* BottomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */; };
 		C6DF66D727D4EB7F00ED2C35 /* GameListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */; };
 		C6DF66D927D4EC2B00ED2C35 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D827D4EC2B00ED2C35 /* GameDataModel.swift */; };
+		C6DF66E027D50D0D00ED2C35 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCollectionViewCell.xib; sourceTree = "<group>"; };
 		C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListModel.swift; sourceTree = "<group>"; };
 		C6DF66D827D4EC2B00ED2C35 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
+		C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		C66E099327D3D81800D3BDB2 /* VideoGamesApp */ = {
 			isa = PBXGroup;
 			children = (
+				C6DF66DE27D50CF500ED2C35 /* Extensions */,
 				C66E09AD27D3D83B00D3BDB2 /* Model */,
 				C66E09AC27D3D83000D3BDB2 /* Controller */,
 				C66E09AB27D3D82200D3BDB2 /* Cell */,
@@ -128,6 +131,14 @@
 				C6DF66D827D4EC2B00ED2C35 /* GameDataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C6DF66DE27D50CF500ED2C35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DF66E027D50D0D00ED2C35 /* UIImageView+Ex.swift in Sources */,
 				C66E099527D3D81800D3BDB2 /* AppDelegate.swift in Sources */,
 				C6DF66D427D4EA9E00ED2C35 /* BottomCollectionViewCell.swift in Sources */,
 				C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */,

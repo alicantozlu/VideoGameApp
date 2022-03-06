@@ -172,19 +172,20 @@
                                                     <constraint firstAttribute="height" constant="250" id="mgp-Hh-IFs"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EGT-k8-IOd">
-                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="itemSize" width="134" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCellIdentity" id="c68-Zh-jGk" customClass="TopCollectionViewCell" customModule="VideoGamesApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="61" width="128" height="128"/>
+                                                        <rect key="frame" x="0.0" y="61" width="134" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dbg-Ds-FPq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="134" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
+                                                        <size key="customSize" width="134" height="128"/>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -208,21 +209,26 @@
                                         <rect key="frame" x="0.0" y="310" width="414" height="459"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVN-e8-VuI">
-                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="itemSize" width="139" height="144"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bottomCellIdentıty" id="VKD-ci-ncJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bottomCellIdentıty" id="VKD-ci-ncJ" customClass="BottomCollectionViewCell" customModule="VideoGamesApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="144"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lCc-BD-Zg0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="139" height="144"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionViewCellContentView>
+                                                <size key="customSize" width="139" height="144"/>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="rnW-lR-1JL" id="GoF-6f-Qmx"/>
+                                            <outlet property="delegate" destination="rnW-lR-1JL" id="iFe-5G-nGt"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
@@ -245,6 +251,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home_32" selectedImage="home_32" id="3Y7-J2-qZi"/>
                     <connections>
+                        <outlet property="bottomCollectionView" destination="0Wr-YP-Zll" id="hrt-jv-sZ1"/>
                         <outlet property="topCollectionView" destination="BUn-db-5jv" id="Vpt-JU-OG2"/>
                     </connections>
                 </viewController>

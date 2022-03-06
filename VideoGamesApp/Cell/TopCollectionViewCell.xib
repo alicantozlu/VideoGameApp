@@ -20,11 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Fd-RvP">
                         <rect key="frame" x="0.0" y="0.0" width="396" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_32" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb">
                                 <rect key="frame" x="20" y="20" width="356" height="210"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="m4Q-f3-CBd"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,11 +45,10 @@
             <connections>
                 <outlet property="gameImageView" destination="sXb-p2-KMb" id="8aQ-wo-ymR"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="124.88839285714285"/>
+            <point key="canvasLocation" x="134.78260869565219" y="124.55357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="home_32" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
