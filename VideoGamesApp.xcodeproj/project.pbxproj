@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */; };
+		C60A2A1827D435A50093F194 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */; };
+		C60A2A1B27D43A880093F194 /* BottomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1927D43A880093F194 /* BottomCollectionViewCell.swift */; };
+		C60A2A1C27D43A880093F194 /* BottomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60A2A1A27D43A880093F194 /* BottomCollectionViewCell.xib */; };
+		C60A2A1E27D43AF30093F194 /* topCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1D27D43AF30093F194 /* topCellModel.swift */; };
+		C60A2A2027D43AFD0093F194 /* bottomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1F27D43AFD0093F194 /* bottomCellModel.swift */; };
 		C66E099527D3D81800D3BDB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E099427D3D81800D3BDB2 /* AppDelegate.swift */; };
 		C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E099627D3D81800D3BDB2 /* SceneDelegate.swift */; };
 		C66E099C27D3D81800D3BDB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66E099A27D3D81800D3BDB2 /* Main.storyboard */; };
@@ -23,6 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
+		C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
+		C60A2A1927D43A880093F194 /* BottomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCollectionViewCell.swift; sourceTree = "<group>"; };
+		C60A2A1A27D43A880093F194 /* BottomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCollectionViewCell.xib; sourceTree = "<group>"; };
+		C60A2A1D27D43AF30093F194 /* topCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topCellModel.swift; sourceTree = "<group>"; };
+		C60A2A1F27D43AFD0093F194 /* bottomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomCellModel.swift; sourceTree = "<group>"; };
 		C66E099127D3D81800D3BDB2 /* VideoGamesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoGamesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66E099427D3D81800D3BDB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66E099627D3D81800D3BDB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +99,10 @@
 		C66E09AB27D3D82200D3BDB2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */,
+				C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */,
+				C60A2A1927D43A880093F194 /* BottomCollectionViewCell.swift */,
+				C60A2A1A27D43A880093F194 /* BottomCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -108,6 +124,8 @@
 		C66E09AD27D3D83B00D3BDB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C60A2A1D27D43AF30093F194 /* topCellModel.swift */,
+				C60A2A1F27D43AFD0093F194 /* bottomCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,7 +188,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60A2A1827D435A50093F194 /* TopCollectionViewCell.xib in Resources */,
 				C66E09A427D3D81A00D3BDB2 /* LaunchScreen.storyboard in Resources */,
+				C60A2A1C27D43A880093F194 /* BottomCollectionViewCell.xib in Resources */,
 				C66E09A127D3D81A00D3BDB2 /* Assets.xcassets in Resources */,
 				C66E099C27D3D81800D3BDB2 /* Main.storyboard in Resources */,
 			);
@@ -189,9 +209,13 @@
 				C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */,
 				C66E09B127D3D8A100D3BDB2 /* UserLongInViewController.swift in Sources */,
 				C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */,
+				C60A2A2027D43AFD0093F194 /* bottomCellModel.swift in Sources */,
 				C66E099F27D3D81800D3BDB2 /* VideoGamesApp.xcdatamodeld in Sources */,
 				C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */,
+				C60A2A1E27D43AF30093F194 /* topCellModel.swift in Sources */,
 				C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */,
+				C60A2A1B27D43A880093F194 /* BottomCollectionViewCell.swift in Sources */,
+				C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */,
 				C66E09AF27D3D88A00D3BDB2 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
