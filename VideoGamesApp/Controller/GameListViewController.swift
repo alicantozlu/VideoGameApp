@@ -12,6 +12,13 @@ class GameListViewController: UIViewController {
     @IBOutlet var topCollectionView: UICollectionView!
     @IBOutlet var bottomCollectionView: UICollectionView!
     
+    /*override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = topCollectionView.collectionViewLayout.collectionViewContentSize.height
+        myCollectionViewHeight.constant = height
+        self.view.layoutIfNeeded()
+    }*/
+    
     var gameList = [GameInfoModel](){
         didSet {
             // Array icerisine veri degisimi olursa tablolar guncellenmesi icin
@@ -63,7 +70,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView{
-            return CGSize(width: self.view.bounds.width, height: 150)
+            return CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
         } else {
             return CGSize(width: self.view.bounds.width, height: 150)
         }
@@ -83,6 +90,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
             
             cell.gameImageView.loadFrom(URLAddress: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
+                    
             
             return cell
         } else {
