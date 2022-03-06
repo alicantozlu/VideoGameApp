@@ -163,7 +163,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Est-Mf-qJ5">
-                                        <rect key="frame" x="0.0" y="45" width="414" height="285"/>
+                                        <rect key="frame" x="0.0" y="45" width="414" height="265"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-db-5jv">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -178,7 +178,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="topCellIdentity" id="c68-Zh-jGk">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCellIdentity" id="c68-Zh-jGk" customClass="TopCollectionViewCell" customModule="VideoGamesApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dbg-Ds-FPq">
@@ -193,9 +193,9 @@
                                                 </connections>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Tw-2ss">
-                                                <rect key="frame" x="0.0" y="250" width="414" height="35"/>
+                                                <rect key="frame" x="0.0" y="250" width="414" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="cFC-PA-Qpi"/>
+                                                    <constraint firstAttribute="height" constant="15" id="cFC-PA-Qpi"/>
                                                 </constraints>
                                             </pageControl>
                                         </subviews>
@@ -204,41 +204,20 @@
                                             <constraint firstAttribute="trailing" secondItem="Hbj-Tw-2ss" secondAttribute="trailing" id="cuP-B3-jso"/>
                                         </constraints>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-Tl-4Sd">
-                                        <rect key="frame" x="0.0" y="330" width="414" height="439"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JRJ-9T-WIR">
+                                        <rect key="frame" x="0.0" y="310" width="414" height="459"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9z1-d5-xgs">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="bottomCellIdentity" id="fnj-fK-TAZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2L4-dI-4SU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="rnW-lR-1JL" id="zQj-4J-vRi"/>
-                                            <outlet property="delegate" destination="rnW-lR-1JL" id="j72-WM-iaN"/>
+                                            <outlet property="dataSource" destination="rnW-lR-1JL" id="Ksi-2j-JBX"/>
+                                            <outlet property="delegate" destination="rnW-lR-1JL" id="N5T-vG-sUK"/>
                                         </connections>
-                                    </collectionView>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="p3g-6W-ZkG" firstAttribute="leading" secondItem="TzB-ZM-vzX" secondAttribute="leading" id="1Q9-Uf-SJW"/>
                                     <constraint firstItem="Est-Mf-qJ5" firstAttribute="top" secondItem="p3g-6W-ZkG" secondAttribute="bottom" id="1cG-e9-AQ9"/>
                                     <constraint firstAttribute="trailing" secondItem="p3g-6W-ZkG" secondAttribute="trailing" id="1jg-vk-zAP"/>
                                     <constraint firstAttribute="trailing" secondItem="Est-Mf-qJ5" secondAttribute="trailing" id="7ET-YJ-Byu"/>
-                                    <constraint firstItem="Ook-Tl-4Sd" firstAttribute="top" secondItem="Est-Mf-qJ5" secondAttribute="bottom" id="YCp-Yi-m7u"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ook-Tl-4Sd" secondAttribute="trailing" id="a2z-1f-tdX"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ook-Tl-4Sd" secondAttribute="bottom" id="edy-0v-scy"/>
-                                    <constraint firstItem="Ook-Tl-4Sd" firstAttribute="leading" secondItem="TzB-ZM-vzX" secondAttribute="leading" id="nl8-b5-LVg"/>
-                                    <constraint firstItem="Ook-Tl-4Sd" firstAttribute="top" secondItem="Est-Mf-qJ5" secondAttribute="bottom" id="pGO-Tt-Khx"/>
                                     <constraint firstItem="Est-Mf-qJ5" firstAttribute="leading" secondItem="TzB-ZM-vzX" secondAttribute="leading" id="riI-rp-lbH"/>
                                 </constraints>
                             </stackView>
@@ -253,6 +232,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home_32" selectedImage="home_32" id="3Y7-J2-qZi"/>
+                    <connections>
+                        <outlet property="bottomTableView" destination="JRJ-9T-WIR" id="pON-ZB-b0Y"/>
+                        <outlet property="topCollectionView" destination="BUn-db-5jv" id="Vpt-JU-OG2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2t-xC-j1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

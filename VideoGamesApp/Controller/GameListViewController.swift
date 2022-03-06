@@ -9,12 +9,24 @@ import UIKit
 
 class GameListViewController: UIViewController {
 
+    @IBOutlet var topCollectionView: UICollectionView!
+    @IBOutlet var bottomTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tabbarConfig()
+        
+        
+        topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
+        
+        bottomTableView.register(UINib(nibName: "BottomTableViewCell", bundle: nil), forCellReuseIdentifier: "bottomCell")
+        self.bottomTableView.rowHeight = 223
     }
     
+    
+    
+    
+    // TabBar ozellestirmeleri
     private func tabbarConfig() {
         guard let tabBar = tabBarController?.tabBar else { return }
         tabBar.isTranslucent = true
@@ -28,8 +40,27 @@ class GameListViewController: UIViewController {
         blurView.frame = tabBar.bounds
         blurView.autoresizingMask = .flexibleWidth
         tabBar.insertSubview(blurView, at: 0)
-        
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .darkGray
+    }
+}
+
+extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
+        return cell
+    }
+}
+
+extension GameListViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bottomCell") as! BottomTableViewCell
+        return cell
     }
 }

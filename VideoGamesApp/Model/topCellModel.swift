@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TopCellModel: Decodable {
+struct TopCellModel {
     let results: [Image]?
 }
 
