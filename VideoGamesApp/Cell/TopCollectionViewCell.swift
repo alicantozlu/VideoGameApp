@@ -14,4 +14,8 @@ class TopCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func configure(model: GameInfoModel){
+        self.gameImageView.loadFrom(URLAddress: model.background_image!)
+    }
 }
