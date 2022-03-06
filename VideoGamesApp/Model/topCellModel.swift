@@ -8,10 +8,9 @@
 import Foundation
 
 struct TopCellModel: Decodable {
-    let count: Int?
-    //let results: [Result]?
+    let results: [Results]
 }
 
-struct Result: Decodable{
-    let background_image: String?
+struct Results: Decodable{
+    let background_image: String
 }

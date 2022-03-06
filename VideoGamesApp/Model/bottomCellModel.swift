@@ -8,12 +8,12 @@
 import Foundation
 
 struct BottomCellModel: Decodable {
-    let results: [GameInfo]?
+    let results: [GameInfo]
 }
 
 struct GameInfo: Decodable{
-    let name: String?
-    let released: String?
-    let background_image: String?
-    let rating: Double?
+    let name: String
+    let released: String
+    let background_image: String
+    let rating: Double
 }
