@@ -19,8 +19,16 @@ class GameListViewController: UIViewController {
                 self.topCollectionView.reloadData()
                 self.bottomCollectionView.reloadData()
             }
+            for i in 0...2{
+                topList.append(gameList[i])
+            }
+            for i in 2...19{
+                bottomList.append(gameList[i])
+            }
         }
     }
+    var topList = [GameInfoModel]()
+    var bottomList = [GameInfoModel]()
     
     let gameListRequest = GameListRequest()
     
@@ -63,7 +71,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView{
-            return CGSize(width: self.view.bounds.width, height: 150)
+            return CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
         } else {
             return CGSize(width: self.view.bounds.width, height: 150)
         }
@@ -71,9 +79,9 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topCollectionView{
-            return 3
+            return topList.count
         } else {
-            return gameList.count
+            return gameList.count-3
         }
     }
     
@@ -82,15 +90,15 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == topCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
             
-            cell.gameImageView.loadFrom(URLAddress: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
+            cell.configure(model: topList[indexPath.row])
+            //cell.gameImageView.loadFrom(URLAddress: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
+                    
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell
             
-            
-            
-            cell.backgroundColor = .blue
+            cell.configure(model: gameList[indexPath.row+3])
             return cell
         }
     }

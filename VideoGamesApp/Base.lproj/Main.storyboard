@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sn-0s-Qax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="145"/>
+            <point key="canvasLocation" x="2506" y="144"/>
         </scene>
         <!--User Long In View Controller-->
         <scene sceneID="Sgv-qg-t2m">
@@ -163,15 +163,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Est-Mf-qJ5">
-                                        <rect key="frame" x="0.0" y="45" width="414" height="265"/>
+                                        <rect key="frame" x="0.0" y="45" width="414" height="235"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-db-5jv">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-db-5jv">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="mgp-Hh-IFs"/>
+                                                    <constraint firstAttribute="height" constant="220" id="YVo-ev-soK"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EGT-k8-IOd">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EGT-k8-IOd">
                                                     <size key="itemSize" width="134" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -179,7 +179,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCellIdentity" id="c68-Zh-jGk" customClass="TopCollectionViewCell" customModule="VideoGamesApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="61" width="134" height="128"/>
+                                                        <rect key="frame" x="0.0" y="46" width="134" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dbg-Ds-FPq">
                                                             <rect key="frame" x="0.0" y="0.0" width="134" height="128"/>
@@ -194,7 +194,7 @@
                                                 </connections>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Tw-2ss">
-                                                <rect key="frame" x="0.0" y="250" width="414" height="15"/>
+                                                <rect key="frame" x="0.0" y="220" width="414" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="cFC-PA-Qpi"/>
                                                 </constraints>
@@ -205,10 +205,10 @@
                                             <constraint firstAttribute="trailing" secondItem="Hbj-Tw-2ss" secondAttribute="trailing" id="cuP-B3-jso"/>
                                         </constraints>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-YP-Zll">
-                                        <rect key="frame" x="0.0" y="310" width="414" height="459"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-YP-Zll">
+                                        <rect key="frame" x="0.0" y="280" width="414" height="489"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVN-e8-VuI">
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eVN-e8-VuI">
                                             <size key="itemSize" width="139" height="144"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
