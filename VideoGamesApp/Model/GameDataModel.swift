@@ -1,5 +1,5 @@
 //
-//  bottomCellModel.swift
+//  GameDataModel.swift
 //  VideoGamesApp
 //
 //  Created by Ali Can Tozlu on 6.03.2022.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct BottomCellModel: Decodable {
-    let results: [GameInfo]?
+struct GameDataModel: Decodable {
+    let results: [GameInfoModel]?
 }
 
-struct GameInfo: Decodable{
+struct GameInfoModel: Decodable{
     let name: String?
     let released: String?
     let background_image: String?
