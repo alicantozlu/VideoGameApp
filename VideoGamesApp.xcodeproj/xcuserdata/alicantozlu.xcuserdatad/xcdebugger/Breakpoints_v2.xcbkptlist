@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "35FCD4E8-8110-4343-B7AE-4BECDEEF55D3"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAE0D4C9-17E4-4BD7-BBA1-167C4CA60855"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoGamesApp/Model/topCellModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
