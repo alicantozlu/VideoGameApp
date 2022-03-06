@@ -9,9 +9,9 @@ import UIKit
 
 class TopCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var gameImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }
