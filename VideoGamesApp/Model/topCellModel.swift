@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct TopCellModel {
-    let results: [Image]?
+struct TopCellModel: Decodable {
+    let count: Int?
+    //let results: [Result]?
 }
 
-struct Image{
+struct Result: Decodable{
     let background_image: String?
 }

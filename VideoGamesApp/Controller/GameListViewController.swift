@@ -12,9 +12,37 @@ class GameListViewController: UIViewController {
     @IBOutlet var topCollectionView: UICollectionView!
     @IBOutlet var bottomTableView: UITableView!
     
+    var topGameList = [TopCellModel]()
+    var bottomGameList = [BottomCellModel]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabbarConfig()
+        
+        
+        
+        
+        let urlStr = "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1"
+        guard let travelURL = URL(string: urlStr) else { return }
+        let topList = try? JSONDecoder().decode([TopCellModel].self, from: Data(contentsOf: travelURL))
+        //topGameList = topList!
+        
+        /*let bottomList = try? JSONDecoder().decode([BottomCellModel].self, from: Data(contentsOf: travelURL))
+        bottomGameList = bottomList!*/
+        
+        print("\(topList)")
+        
+        
+        /*
+        for i in 0...travels.count-1{
+            destinations.append(DestinationModel(destination1: destination1, destination2: destination2, date: date, travelModel: travels[i]))
+        }*/
+        
+        
+        
+        
+        
         
         
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
