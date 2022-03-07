@@ -13,6 +13,7 @@ class GameListViewController: UIViewController {
     @IBOutlet var topCollectionView: UICollectionView!
     @IBOutlet var gamePageController: UIPageControl!
     @IBOutlet var bottomCollectionView: UICollectionView!
+    @IBOutlet var innerStackView: UIStackView!
     
     var currentPage = 0 {
         didSet{
@@ -40,6 +41,9 @@ class GameListViewController: UIViewController {
     
     let gameListRequest = GameListRequest(link: "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1")
     
+    var filteredGames = [GameInfoModel]()
+    var isFiltering: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabbarConfig()
@@ -51,6 +55,10 @@ class GameListViewController: UIViewController {
                 print(error)
             }
         }
+        
+        //let backgroundEmpty = EmptyView()
+        bottomCollectionView.backgroundView = EmptyView()
+        bottomCollectionView.backgroundView?.isHidden = true
         
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
         bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
@@ -110,9 +118,14 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
         if collectionView == topCollectionView{
             return topList.count
         } else {
+            if isFiltering {
+                innerStackView.isHidden = true
+                return filteredGames.count
+            }
             return gameList.count-3
         }
     }
@@ -126,7 +139,12 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell
             
-            cell.configure(model: gameList[indexPath.row+3])
+            if isFiltering {
+                cell.configure(model: filteredGames[indexPath.row])
+            } else {
+                cell.configure(model: gameList[indexPath.row+3])
+            }
+            
             return cell
         }
     }
@@ -135,5 +153,32 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentPage = Int(scrollView.contentOffset.x / width)
+    }
+}
+
+extension GameListViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if(searchText == ""){
+            isFiltering = false
+            innerStackView.isHidden = false
+            bottomCollectionView.backgroundView?.isHidden = true
+            bottomCollectionView.reloadData()
+            return
+        }
+        filteredGames = gameList.filter({ (gameInfo:GameInfoModel) -> Bool in
+            return gameInfo.name!.lowercased().contains(searchText.lowercased())
+        })
+        
+        (filteredGames.count == 0) ? (bottomCollectionView.backgroundView?.isHidden = false) : (bottomCollectionView.backgroundView?.isHidden = true)
+        
+        isFiltering = true
+        bottomCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isFiltering = false
+        searchBar.text = ""
+        bottomCollectionView.reloadData()
     }
 }
