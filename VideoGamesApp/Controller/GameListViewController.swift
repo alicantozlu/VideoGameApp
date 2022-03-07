@@ -38,7 +38,7 @@ class GameListViewController: UIViewController {
     var topList = [GameInfoModel]()
     var bottomList = [GameInfoModel]()
     
-    let gameListRequest = GameListRequest()
+    let gameListRequest = GameListRequest(link: "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,25 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+        gameScreenVC.modalPresentationStyle = .fullScreen
+        gameScreenVC.modalTransitionStyle = .flipHorizontal
+        
+        GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
+        
+        /*let gameInformationRequest = GameInformationRequest(link: "https://api.rawg.io/api/games/\(bottomList[indexPath.row+1].slug)?key=9718fac0b2cd44f5958788cabc198237")
+        
+        gameInformationRequest.getGames { result in
+            do {
+                GameScreenViewController.descriptionText = try result.get().description!
+            }catch let error {
+                print(error)
+            }
+        }*/
+        present(gameScreenVC, animated: true, completion: nil)
+    }
+    
     // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topCollectionView{
@@ -97,14 +116,9 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     //Hucre icerigi - DataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if collectionView == topCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCellIdentity", for: indexPath) as! TopCollectionViewCell
-            
             cell.configure(model: topList[indexPath.row])
-            //cell.gameImageView.loadFrom(URLAddress: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
-                    
-            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell

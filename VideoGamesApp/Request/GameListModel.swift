@@ -16,8 +16,8 @@ struct GameListRequest{
 
     let resourceURL: URL
 
-    init(){
-        let apiString = "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1"
+    init(link: String){
+        let apiString = link
         guard let apiURL = URL(string: apiString) else { fatalError("Error") }
         self.resourceURL = apiURL
     }
