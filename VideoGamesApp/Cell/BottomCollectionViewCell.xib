@@ -39,10 +39,12 @@
                                 <rect key="frame" x="348" y="10" width="22" height="20"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2013-09-17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNU-6A-kgv">
-                                <rect key="frame" x="10" y="10" width="91" height="21"/>
+                                <rect key="frame" x="10" y="10" width="90.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,7 +81,7 @@
                 <outlet property="ratingLbl" destination="uVS-Xb-lhp" id="lTb-cL-RYr"/>
                 <outlet property="releaseDateLbl" destination="lNU-6A-kgv" id="6u6-Od-Weo"/>
             </connections>
-            <point key="canvasLocation" x="362.31884057971018" y="93.080357142857139"/>
+            <point key="canvasLocation" x="362.31884057971018" y="92.745535714285708"/>
         </collectionViewCell>
     </objects>
     <resources>
