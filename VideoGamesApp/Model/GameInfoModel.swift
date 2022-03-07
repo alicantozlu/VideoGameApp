@@ -8,5 +8,5 @@
 import Foundation
 
 struct GameDescriptionModel: Decodable{
-    let description: String?
+    let description_raw: String?
 }

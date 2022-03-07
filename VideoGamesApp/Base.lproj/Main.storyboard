@@ -408,10 +408,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Kd-ZC-ri6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="299"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Kd-ZC-ri6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="299" id="uJI-oJ-lcq"/>
+                                                                    <constraint firstAttribute="height" constant="300" id="uJI-oJ-lcq"/>
                                                                     <constraint firstAttribute="width" constant="414" id="xiR-Fr-bVs"/>
                                                                 </constraints>
                                                             </imageView>
@@ -420,7 +420,7 @@
                                                             <constraint firstItem="1Kd-ZC-ri6" firstAttribute="leading" secondItem="nQl-S9-WWi" secondAttribute="leading" id="GgH-u5-kwg"/>
                                                             <constraint firstAttribute="trailing" secondItem="1Kd-ZC-ri6" secondAttribute="trailing" id="noT-SV-zwb"/>
                                                             <constraint firstItem="1Kd-ZC-ri6" firstAttribute="top" secondItem="nQl-S9-WWi" secondAttribute="top" id="qJb-O2-n71"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1Kd-ZC-ri6" secondAttribute="bottom" constant="1" id="xk5-t1-eui"/>
+                                                            <constraint firstAttribute="bottom" secondItem="1Kd-ZC-ri6" secondAttribute="bottom" id="xk5-t1-eui"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="414" height="300"/>
@@ -434,11 +434,9 @@
                                                 <outlet property="delegate" destination="Ea6-mw-Lji" id="CG6-aA-pbT"/>
                                             </connections>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8M-3F-7ai">
-                                            <rect key="frame" x="20" y="366" width="374" height="500"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="500" id="BSj-Hl-cGw"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8M-3F-7ai">
+                                            <rect key="frame" x="120" y="377" width="175" height="268"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -446,9 +444,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="v35-uL-7mm" firstAttribute="leading" secondItem="Qh9-0K-uWp" secondAttribute="leading" id="8nI-PN-KdG"/>
-                                        <constraint firstAttribute="bottom" secondItem="I8M-3F-7ai" secondAttribute="bottom" constant="30" id="INo-3A-v1A"/>
-                                        <constraint firstAttribute="trailing" secondItem="I8M-3F-7ai" secondAttribute="trailing" constant="20" id="jaQ-Zw-EKQ"/>
-                                        <constraint firstItem="I8M-3F-7ai" firstAttribute="leading" secondItem="Qh9-0K-uWp" secondAttribute="leading" constant="20" id="oh0-BN-IFT"/>
                                         <constraint firstAttribute="trailing" secondItem="v35-uL-7mm" secondAttribute="trailing" id="vHR-hS-cIv"/>
                                         <constraint firstItem="v35-uL-7mm" firstAttribute="top" secondItem="Qh9-0K-uWp" secondAttribute="top" constant="45" id="vbN-Qn-GNf"/>
                                     </constraints>
