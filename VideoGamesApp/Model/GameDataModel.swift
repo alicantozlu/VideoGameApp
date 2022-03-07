@@ -12,8 +12,15 @@ struct GameDataModel: Decodable {
 }
 
 struct GameInfoModel: Decodable{
+    let slug: String?
     let name: String?
     let released: String?
     let background_image: String?
     let rating: Double?
+    let short_screenshots: [ShortScreenShots]?
 }
+
+struct ShortScreenShots: Decodable{
+    let image: String?
+}
+

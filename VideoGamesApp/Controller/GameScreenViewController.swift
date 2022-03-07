@@ -8,22 +8,47 @@
 import UIKit
 
 class GameScreenViewController: UIViewController {
-
+    
+    @IBOutlet var innerImageView: UIImageView!
+    @IBOutlet var gameScreenCollectionView: UICollectionView!
+    @IBOutlet var gameDescriptionLbl: UILabel!
+    
+    static var gameInfo = [ShortScreenShots]()
+    static var descriptionText:String = ""
+    
+    /*var gameInfo = [ShortScreenShots](){
+        didSet{
+            DispatchQueue.main.async {
+                self.gameScreenCollectionView.reloadData()
+            }
+        }
+    }*/
+    
+    //var slug:String = "grand-theft-auto-v"
+    //let gameInformationRequest = GameInformationRequest(link: "https://api.rawg.io/api/games/grand-theft-auto-v?key=9718fac0b2cd44f5958788cabc198237")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameDescriptionLbl.text = GameScreenViewController.descriptionText
+        /*gameInformationRequest.getGames { result in
+            do {
+                self.gameInfo = try result.get().short_screenshots!
+            }catch let error {
+                print(error)
+            }
+        }*/
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension GameScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return GameScreenViewController.gameInfo.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameScreenCellIdentifier", for: indexPath) as! GameScreenCollectionViewCell
+        cell.comfigure(model: GameScreenViewController.gameInfo[indexPath.row])
+        return cell
     }
-    */
-
 }
