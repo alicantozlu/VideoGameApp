@@ -29,7 +29,6 @@
 		C6DF66E027D50D0D00ED2C35 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */; };
 		C6DF66E427D57EE900ED2C35 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66E327D57EE900ED2C35 /* OnboardingCollectionViewCell.swift */; };
 		C6DF66E627D5BDF600ED2C35 /* GameScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66E527D5BDF600ED2C35 /* GameScreenCollectionViewCell.swift */; };
-		C6DF66EA27D5C75700ED2C35 /* GameInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66E927D5C75700ED2C35 /* GameInformationModel.swift */; };
 		C6DF66ED27D5D03100ED2C35 /* GameInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66EC27D5D03100ED2C35 /* GameInfoModel.swift */; };
 		C6DF66EF27D5D2A400ED2C35 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66EE27D5D2A400ED2C35 /* SlideModel.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +58,6 @@
 		C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
 		C6DF66E327D57EE900ED2C35 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6DF66E527D5BDF600ED2C35 /* GameScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenCollectionViewCell.swift; sourceTree = "<group>"; };
-		C6DF66E927D5C75700ED2C35 /* GameInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInformationModel.swift; sourceTree = "<group>"; };
 		C6DF66EC27D5D03100ED2C35 /* GameInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoModel.swift; sourceTree = "<group>"; };
 		C6DF66EE27D5D2A400ED2C35 /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +156,6 @@
 		C6DF66EB27D5D00500ED2C35 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				C6DF66E927D5C75700ED2C35 /* GameInformationModel.swift */,
 				C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */,
 			);
 			path = Request;
@@ -254,7 +251,6 @@
 				C66E099F27D3D81800D3BDB2 /* VideoGamesApp.xcdatamodeld in Sources */,
 				C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */,
 				C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */,
-				C6DF66EA27D5C75700ED2C35 /* GameInformationModel.swift in Sources */,
 				C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */,
 				C66E09AF27D3D88A00D3BDB2 /* OnboardingViewController.swift in Sources */,
 			);

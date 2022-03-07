@@ -87,22 +87,25 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-        gameScreenVC.modalPresentationStyle = .fullScreen
-        gameScreenVC.modalTransitionStyle = .flipHorizontal
+        
         
         GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
         
-        /*let gameInformationRequest = GameInformationRequest(link: "https://api.rawg.io/api/games/\(bottomList[indexPath.row+1].slug)?key=9718fac0b2cd44f5958788cabc198237")
+        let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row+1].slug!)
         
-        gameInformationRequest.getGames { result in
+        gameDetailRequest.getGameDetail { result in
             do {
-                GameScreenViewController.descriptionText = try result.get().description!
+                GameScreenViewController.descriptionText = try result.get().description_raw!
+                DispatchQueue.main.async {
+                    let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                    gameScreenVC.modalPresentationStyle = .fullScreen
+                    gameScreenVC.modalTransitionStyle = .flipHorizontal
+                    self.present(gameScreenVC, animated: true, completion: nil)
+                }
             }catch let error {
                 print(error)
             }
-        }*/
-        present(gameScreenVC, animated: true, completion: nil)
+        }
     }
     
     // Hucre Sayisi - DataSource
