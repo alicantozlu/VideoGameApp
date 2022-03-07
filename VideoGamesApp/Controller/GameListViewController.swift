@@ -69,9 +69,10 @@ class GameListViewController: UIViewController {
 
 extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    //Hucre boyutu
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView{
-            return CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
+            return CGSize(width: self.view.bounds.width, height: 220)
         } else {
             return CGSize(width: self.view.bounds.width, height: 150)
         }
