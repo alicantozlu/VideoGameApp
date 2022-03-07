@@ -88,11 +88,11 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
         GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
+        GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+1].background_image!)
+        //bottomList[indexPath.row+1]
         
         let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row+1].slug!)
-        
         gameDetailRequest.getGameDetail { result in
             do {
                 GameScreenViewController.descriptionText = try result.get().description_raw!

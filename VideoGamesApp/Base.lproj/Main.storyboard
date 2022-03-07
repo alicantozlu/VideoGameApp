@@ -378,7 +378,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0o7-6R-DwA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0o7-6R-DwA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jV-yo-Ckw">
@@ -434,16 +434,55 @@
                                                 <outlet property="delegate" destination="Ea6-mw-Lji" id="CG6-aA-pbT"/>
                                             </connections>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8M-3F-7ai">
-                                            <rect key="frame" x="120" y="377" width="175" height="268"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-QI-8uM">
+                                            <rect key="frame" x="20" y="365" width="374" height="436"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bt-nu-DpC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8M-3F-7ai">
+                                                            <rect key="frame" x="8" y="8" width="358" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="I8M-3F-7ai" firstAttribute="leading" secondItem="8bt-nu-DpC" secondAttribute="leading" constant="8" id="7KI-ep-AM0"/>
+                                                        <constraint firstItem="I8M-3F-7ai" firstAttribute="top" secondItem="8bt-nu-DpC" secondAttribute="top" constant="8" id="Biy-SH-qdF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="I8M-3F-7ai" secondAttribute="bottom" constant="8" id="U1X-Xe-Es4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="I8M-3F-7ai" secondAttribute="trailing" constant="8" id="yBX-R3-p9G"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="8bt-nu-DpC" secondAttribute="trailing" id="7H9-AA-1Gm"/>
+                                                <constraint firstItem="8bt-nu-DpC" firstAttribute="top" secondItem="Xdu-QI-8uM" secondAttribute="top" id="ZWg-7n-9Hf"/>
+                                                <constraint firstItem="8bt-nu-DpC" firstAttribute="leading" secondItem="Xdu-QI-8uM" secondAttribute="leading" id="lMd-8g-Atm"/>
+                                                <constraint firstAttribute="bottom" secondItem="8bt-nu-DpC" secondAttribute="bottom" id="lYq-gS-DR8"/>
+                                                <constraint firstItem="8bt-nu-DpC" firstAttribute="width" secondItem="Xdu-QI-8uM" secondAttribute="width" id="ooi-2D-lf1"/>
+                                            </constraints>
+                                            <viewLayoutGuide key="contentLayoutGuide" id="OK4-R8-8AN"/>
+                                            <viewLayoutGuide key="frameLayoutGuide" id="EBI-by-xf6"/>
+                                        </scrollView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAR-7v-79A">
+                                            <rect key="frame" x="35" y="820" width="67" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="goBackBtnTapped:" destination="Ea6-mw-Lji" eventType="touchUpInside" id="zJY-SL-q2W"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Xdu-QI-8uM" firstAttribute="top" secondItem="v35-uL-7mm" secondAttribute="bottom" constant="20" id="7JV-bx-mD6"/>
                                         <constraint firstItem="v35-uL-7mm" firstAttribute="leading" secondItem="Qh9-0K-uWp" secondAttribute="leading" id="8nI-PN-KdG"/>
+                                        <constraint firstItem="Xdu-QI-8uM" firstAttribute="leading" secondItem="Qh9-0K-uWp" secondAttribute="leading" constant="20" id="MsX-6B-mDU"/>
+                                        <constraint firstAttribute="trailing" secondItem="Xdu-QI-8uM" secondAttribute="trailing" constant="20" id="dVO-R0-3I4"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xdu-QI-8uM" secondAttribute="bottom" constant="95" id="dxt-Kb-V6U"/>
+                                        <constraint firstAttribute="bottom" secondItem="YAR-7v-79A" secondAttribute="bottom" constant="45" id="fSt-55-aju"/>
+                                        <constraint firstItem="YAR-7v-79A" firstAttribute="leading" secondItem="Qh9-0K-uWp" secondAttribute="leading" constant="35" id="mUq-Rz-xA8"/>
                                         <constraint firstAttribute="trailing" secondItem="v35-uL-7mm" secondAttribute="trailing" id="vHR-hS-cIv"/>
                                         <constraint firstItem="v35-uL-7mm" firstAttribute="top" secondItem="Qh9-0K-uWp" secondAttribute="top" constant="45" id="vbN-Qn-GNf"/>
                                     </constraints>
@@ -467,6 +506,7 @@
                     <connections>
                         <outlet property="gameDescriptionLbl" destination="I8M-3F-7ai" id="NKS-Qc-Iyf"/>
                         <outlet property="gameScreenCollectionView" destination="v35-uL-7mm" id="Uvj-QY-0in"/>
+                        <outlet property="goBackBtn" destination="YAR-7v-79A" id="nqi-ED-CRr"/>
                         <outlet property="innerImageView" destination="0o7-6R-DwA" id="YlX-1q-3Gs"/>
                     </connections>
                 </viewController>
