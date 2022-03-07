@@ -9,8 +9,16 @@ import UIKit
 
 class GameListViewController: UIViewController {
     
+    @IBOutlet var gameSearchBar: UISearchBar!
     @IBOutlet var topCollectionView: UICollectionView!
+    @IBOutlet var gamePageController: UIPageControl!
     @IBOutlet var bottomCollectionView: UICollectionView!
+    
+    var currentPage = 0 {
+        didSet{
+            gamePageController.currentPage = currentPage
+        }
+    }
     
     var gameList = [GameInfoModel](){
         didSet {
@@ -78,6 +86,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topCollectionView{
             return topList.count
@@ -86,6 +95,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    //Hucre icerigi - DataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == topCollectionView{
@@ -102,5 +112,11 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             cell.configure(model: gameList[indexPath.row+3])
             return cell
         }
+    }
+    
+    //Pagecontroller Hareketi
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
     }
 }

@@ -13,6 +13,7 @@ class BottomCollectionViewCell: UICollectionViewCell {
     @IBOutlet var releaseDateLbl: UILabel!
     @IBOutlet var gameImageView: UIImageView!
     @IBOutlet var ratingLbl: UILabel!
+    @IBOutlet var innerImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,7 @@ class BottomCollectionViewCell: UICollectionViewCell {
         gameNameLbl.text = model.name
         releaseDateLbl.text = model.released
         gameImageView.loadFrom(URLAddress: model.background_image!)
+        innerImageView.loadFrom(URLAddress: model.background_image!)
         ratingLbl.text = "\(model.rating!)"
     }
 }

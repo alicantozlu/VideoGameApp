@@ -276,7 +276,7 @@
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-db-5jv">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="YVo-ev-soK"/>
                                                 </constraints>
@@ -302,7 +302,7 @@
                                                     <outlet property="delegate" destination="rnW-lR-1JL" id="GMy-DI-HN0"/>
                                                 </connections>
                                             </collectionView>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Tw-2ss">
+                                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Tw-2ss">
                                                 <rect key="frame" x="0.0" y="220" width="414" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="cFC-PA-Qpi"/>
@@ -316,7 +316,7 @@
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-YP-Zll">
                                         <rect key="frame" x="0.0" y="280" width="414" height="489"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eVN-e8-VuI">
                                             <size key="itemSize" width="139" height="144"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -361,6 +361,8 @@
                     <tabBarItem key="tabBarItem" title="" image="home_32" selectedImage="home_32" id="3Y7-J2-qZi"/>
                     <connections>
                         <outlet property="bottomCollectionView" destination="0Wr-YP-Zll" id="hrt-jv-sZ1"/>
+                        <outlet property="gamePageController" destination="Hbj-Tw-2ss" id="Fx3-h0-1gT"/>
+                        <outlet property="gameSearchBar" destination="p3g-6W-ZkG" id="b7G-VO-pE0"/>
                         <outlet property="topCollectionView" destination="BUn-db-5jv" id="Vpt-JU-OG2"/>
                     </connections>
                 </viewController>
