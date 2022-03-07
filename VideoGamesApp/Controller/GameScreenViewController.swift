@@ -12,32 +12,19 @@ class GameScreenViewController: UIViewController {
     @IBOutlet var innerImageView: UIImageView!
     @IBOutlet var gameScreenCollectionView: UICollectionView!
     @IBOutlet var gameDescriptionLbl: UILabel!
+    @IBOutlet var goBackBtn: UIButton!
     
     static var gameInfo = [ShortScreenShots]()
+    static var backgroundImage = UIImageView()
     static var descriptionText:String = ""
-    
-    /*var gameInfo = [ShortScreenShots](){
-        didSet{
-            DispatchQueue.main.async {
-                self.gameScreenCollectionView.reloadData()
-            }
-        }
-    }*/
-    
-    //var slug:String = "grand-theft-auto-v"
-    //let gameInformationRequest = GameInformationRequest(link: "https://api.rawg.io/api/games/grand-theft-auto-v?key=9718fac0b2cd44f5958788cabc198237")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         gameDescriptionLbl.text = GameScreenViewController.descriptionText
-        /*gameInformationRequest.getGames { result in
-            do {
-                self.gameInfo = try result.get().short_screenshots!
-            }catch let error {
-                print(error)
-            }
-        }*/
+        innerImageView.image = GameScreenViewController.backgroundImage.image
+    }
+    @IBAction func goBackBtnTapped(_ sender: Any) {
+        dismiss(animated: true,completion: nil)
     }
 }
 

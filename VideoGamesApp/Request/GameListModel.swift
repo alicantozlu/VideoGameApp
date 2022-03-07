@@ -13,7 +13,6 @@ enum ErrorList: Error {
 }
 
 struct GameListRequest{
-
     let resourceURL: URL
     let descriptionResourceURL: URL
 
