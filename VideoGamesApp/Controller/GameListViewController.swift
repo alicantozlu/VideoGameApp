@@ -118,7 +118,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         if collectionView == topCollectionView{
             return topList.count
         } else {
@@ -158,22 +158,22 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension GameListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if(searchText == ""){
+        if(searchText.count >= 3){
+            filteredGames = gameList.filter({ (gameInfo:GameInfoModel) -> Bool in
+                return gameInfo.name!.lowercased().contains(searchText.lowercased())
+            })
+            
+            (filteredGames.count == 0) ? (bottomCollectionView.backgroundView?.isHidden = false) : (bottomCollectionView.backgroundView?.isHidden = true)
+            
+            isFiltering = true
+            bottomCollectionView.reloadData()
+        }else{
             isFiltering = false
             innerStackView.isHidden = false
             bottomCollectionView.backgroundView?.isHidden = true
             bottomCollectionView.reloadData()
             return
         }
-        filteredGames = gameList.filter({ (gameInfo:GameInfoModel) -> Bool in
-            return gameInfo.name!.lowercased().contains(searchText.lowercased())
-        })
-        
-        (filteredGames.count == 0) ? (bottomCollectionView.backgroundView?.isHidden = false) : (bottomCollectionView.backgroundView?.isHidden = true)
-        
-        isFiltering = true
-        bottomCollectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
