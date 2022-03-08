@@ -24,6 +24,7 @@
 		C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */; };
 		C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */; };
 		C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */; };
+		C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A392BD27D812E7007BC017 /* ImageConfigure.swift */; };
 		C6DF66D427D4EA9E00ED2C35 /* BottomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D227D4EA9E00ED2C35 /* BottomCollectionViewCell.swift */; };
 		C6DF66D527D4EA9E00ED2C35 /* BottomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */; };
 		C6DF66D727D4EB7F00ED2C35 /* GameListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */; };
@@ -55,6 +56,7 @@
 		C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedGamesViewController.swift; sourceTree = "<group>"; };
 		C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		C6A392BD27D812E7007BC017 /* ImageConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigure.swift; sourceTree = "<group>"; };
 		C6DF66D227D4EA9E00ED2C35 /* BottomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCollectionViewCell.xib; sourceTree = "<group>"; };
 		C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */,
+				C6A392BD27D812E7007BC017 /* ImageConfigure.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				C66E09B127D3D8A100D3BDB2 /* UserLongInViewController.swift in Sources */,
 				C6DF66D727D4EB7F00ED2C35 /* GameListModel.swift in Sources */,
 				C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */,
+				C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */,
 				C6DF66EF27D5D2A400ED2C35 /* SlideModel.swift in Sources */,
 				C66E099F27D3D81800D3BDB2 /* VideoGamesApp.xcdatamodeld in Sources */,
 				C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */,

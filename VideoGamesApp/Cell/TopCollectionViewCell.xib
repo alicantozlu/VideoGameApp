@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Fd-RvP">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KTl-0d-hLQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KTl-0d-hLQ" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="EHO-9X-xCn"/>
@@ -38,7 +38,7 @@
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="380" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="QND-Oj-9EO"/>

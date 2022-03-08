@@ -11,9 +11,9 @@ class BottomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var gameNameLbl: UILabel!
     @IBOutlet var releaseDateLbl: UILabel!
-    @IBOutlet var gameImageView: UIImageView!
+    @IBOutlet var gameImageView: ImageConfigure!
     @IBOutlet var ratingLbl: UILabel!
-    @IBOutlet var innerImageView: UIImageView!
+    @IBOutlet var innerImageView: ImageConfigure!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +22,10 @@ class BottomCollectionViewCell: UICollectionViewCell {
     func configure(model: GameInfoModel){
         gameNameLbl.text = model.name
         releaseDateLbl.text = model.released
-        gameImageView.loadFrom(URLAddress: model.background_image!)
-        innerImageView.loadFrom(URLAddress: model.background_image!)
+        gameImageView.loadImage(from: model.background_image!)
+        innerImageView.loadImage(from: model.background_image!)
+        //gameImageView.loadFrom(URLAddress: model.background_image!)
+        //innerImageView.loadFrom(URLAddress: model.background_image!)
         ratingLbl.text = "\(model.rating!)"
     }
 }

@@ -115,6 +115,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         if(isFiltering){
             GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
             GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
+            //GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
             
             let gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
             gameDetailRequest.getGameDetail { result in
@@ -132,13 +133,13 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             }
             
         }else{
-            if(!newGameList.isEmpty){
+            //if(!newGameList.isEmpty){
                 GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
-            }else{
-                GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
-                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
-            }
+           /* }else{
+                GameScreenViewController.gameInfo = bottomList[indexPath.row+3].short_screenshots!
+                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+3].background_image!)
+            }*/
             let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
             gameDetailRequest.getGameDetail { result in
                 do {

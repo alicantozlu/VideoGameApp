@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQs-GY-FEP">
                         <rect key="frame" x="10" y="5" width="395" height="205"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guh-gl-x7d">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guh-gl-x7d" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="395" id="51F-nN-SDr"/>
@@ -62,7 +62,7 @@
                                             <rect key="frame" x="333" y="4.5" width="22" height="20"/>
                                             <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-bd-aEp">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-bd-aEp" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                             <rect key="frame" x="50" y="30.5" width="300" height="143.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="143.5" id="J3g-3C-uVn"/>
