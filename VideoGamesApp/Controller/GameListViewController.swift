@@ -112,28 +112,49 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(!newGameList.isEmpty){
-            GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
-            GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
-        }else{
-            GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
-            GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+1].background_image!)
-        }
-        
-        let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
-        gameDetailRequest.getGameDetail { result in
-            do {
-                GameScreenViewController.descriptionText = try result.get().description_raw!
-                DispatchQueue.main.async {
-                    let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                    gameScreenVC.modalPresentationStyle = .fullScreen
-                    gameScreenVC.modalTransitionStyle = .flipHorizontal
-                    self.present(gameScreenVC, animated: true, completion: nil)
+        if(isFiltering){
+            GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
+            GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
+            
+            let gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
+            gameDetailRequest.getGameDetail { result in
+                do {
+                    GameScreenViewController.descriptionText = try result.get().description_raw!
+                    DispatchQueue.main.async {
+                        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                        gameScreenVC.modalPresentationStyle = .fullScreen
+                        gameScreenVC.modalTransitionStyle = .flipHorizontal
+                        self.present(gameScreenVC, animated: true, completion: nil)
+                    }
+                }catch let error {
+                    print(error)
                 }
-            }catch let error {
-                print(error)
+            }
+            
+        }else{
+            if(!newGameList.isEmpty){
+                GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
+                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
+            }else{
+                GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
+                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
+            }
+            let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
+            gameDetailRequest.getGameDetail { result in
+                do {
+                    GameScreenViewController.descriptionText = try result.get().description_raw!
+                    DispatchQueue.main.async {
+                        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                        gameScreenVC.modalPresentationStyle = .fullScreen
+                        gameScreenVC.modalTransitionStyle = .flipHorizontal
+                        self.present(gameScreenVC, animated: true, completion: nil)
+                    }
+                }catch let error {
+                    print(error)
+                }
             }
         }
+        
     }
     
     // Hucre Sayisi - DataSource
