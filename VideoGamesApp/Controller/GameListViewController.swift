@@ -21,6 +21,19 @@ class GameListViewController: UIViewController {
         }
     }
     
+    var newGameList = [GameInfoModel](){
+        didSet{
+            print("BOTTOM:\(newGameList)")
+            for i in 0...19{
+                bottomList.append(newGameList[i])
+            }
+            DispatchQueue.main.async {
+                self.bottomCollectionView.reloadData()
+            }
+            
+        }
+    }
+    
     var gameList = [GameInfoModel](){
         didSet {
             // Array icerisine veri degisimi olursa tablolar guncellenmesi icin
@@ -31,11 +44,14 @@ class GameListViewController: UIViewController {
             for i in 0...2{
                 topList.append(gameList[i])
             }
-            for i in 2...19{
+            for i in 3...19{
                 bottomList.append(gameList[i])
             }
+            print("BOTTOM:\(bottomList)")
         }
     }
+    var nextPage:String = ""
+    
     var topList = [GameInfoModel]()
     var bottomList = [GameInfoModel]()
     
@@ -51,6 +67,7 @@ class GameListViewController: UIViewController {
         gameListRequest.getGames { result in
             do {
                 self.gameList = try result.get().results!
+                self.nextPage = try result.get().next!
             }catch let error {
                 print(error)
             }
@@ -95,12 +112,15 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(!newGameList.isEmpty){
+            GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
+            GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
+        }else{
+            GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
+            GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+1].background_image!)
+        }
         
-        GameScreenViewController.gameInfo = bottomList[indexPath.row+1].short_screenshots!
-        GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+1].background_image!)
-        //bottomList[indexPath.row+1]
-        
-        let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row+1].slug!)
+        let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
         gameDetailRequest.getGameDetail { result in
             do {
                 GameScreenViewController.descriptionText = try result.get().description_raw!
@@ -126,7 +146,11 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
                 innerStackView.isHidden = true
                 return filteredGames.count
             }
-            return gameList.count-3
+            if(!newGameList.isEmpty){
+                return bottomList.count
+            }else{
+                return gameList.count-3
+            }
         }
     }
     
@@ -138,13 +162,31 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell
-            
+            print("BOTTOMLIST.COUNT -> \(bottomList.count)")
+            print("INDEXPATH -> \(indexPath.row)")
+            print("--------------------------------")
             if isFiltering {
                 cell.configure(model: filteredGames[indexPath.row])
             } else {
-                cell.configure(model: gameList[indexPath.row+3])
+                if(!newGameList.isEmpty){
+                    cell.configure(model: bottomList[indexPath.row])
+                }else{
+                    cell.configure(model: gameList[indexPath.row+3])
+                }
             }
             
+            if(indexPath.row+2 == bottomList.count){
+                let gameListRequest = GameListRequest(link: self.nextPage)
+                
+                gameListRequest.getGames { result in
+                    do {
+                        self.newGameList = try result.get().results!
+                        self.nextPage = try result.get().next!
+                    }catch let error {
+                        print(error)
+                    }
+                }
+            }
             return cell
         }
     }
@@ -159,7 +201,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
 extension GameListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText.count >= 3){
-            filteredGames = gameList.filter({ (gameInfo:GameInfoModel) -> Bool in
+            filteredGames = bottomList.filter({ (gameInfo:GameInfoModel) -> Bool in
                 return gameInfo.name!.lowercased().contains(searchText.lowercased())
             })
             

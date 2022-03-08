@@ -8,6 +8,7 @@
 import Foundation
 
 struct GameDataModel: Decodable {
+    let next: String?
     let results: [GameInfoModel]?
 }
 
@@ -23,4 +24,3 @@ struct GameInfoModel: Decodable{
 struct ShortScreenShots: Decodable{
     let image: String?
 }
-
