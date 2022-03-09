@@ -115,7 +115,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         if(isFiltering){
             GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
             GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
-            //GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
+            GameScreenViewController.currentGame.append(filteredGames[indexPath.row])
             
             let gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
             gameDetailRequest.getGameDetail { result in
@@ -133,29 +133,45 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             }
             
         }else{
-            //if(!newGameList.isEmpty){
+            if(collectionView == topCollectionView){
+                GameScreenViewController.gameInfo = topList[indexPath.row].short_screenshots!
+                GameScreenViewController.backgroundImage.loadFrom(URLAddress: topList[indexPath.row].background_image!)
+                GameScreenViewController.currentGame.append(topList[indexPath.row])
+                let gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
+                gameDetailRequest.getGameDetail { result in
+                    do {
+                        GameScreenViewController.descriptionText = try result.get().description_raw!
+                        DispatchQueue.main.async {
+                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                            gameScreenVC.modalPresentationStyle = .fullScreen
+                            gameScreenVC.modalTransitionStyle = .flipHorizontal
+                            self.present(gameScreenVC, animated: true, completion: nil)
+                        }
+                    }catch let error {
+                        print(error)
+                    }
+                }
+                // BottomL
+            }else{
                 GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
-           /* }else{
-                GameScreenViewController.gameInfo = bottomList[indexPath.row+3].short_screenshots!
-                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row+3].background_image!)
-            }*/
-            let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
-            gameDetailRequest.getGameDetail { result in
-                do {
-                    GameScreenViewController.descriptionText = try result.get().description_raw!
-                    DispatchQueue.main.async {
-                        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                        gameScreenVC.modalPresentationStyle = .fullScreen
-                        gameScreenVC.modalTransitionStyle = .flipHorizontal
-                        self.present(gameScreenVC, animated: true, completion: nil)
+                GameScreenViewController.currentGame.append(bottomList[indexPath.row])
+                let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
+                gameDetailRequest.getGameDetail { result in
+                    do {
+                        GameScreenViewController.descriptionText = try result.get().description_raw!
+                        DispatchQueue.main.async {
+                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                            gameScreenVC.modalPresentationStyle = .fullScreen
+                            gameScreenVC.modalTransitionStyle = .flipHorizontal
+                            self.present(gameScreenVC, animated: true, completion: nil)
+                        }
+                    }catch let error {
+                        print(error)
                     }
-                }catch let error {
-                    print(error)
                 }
             }
         }
-        
     }
     
     // Hucre Sayisi - DataSource

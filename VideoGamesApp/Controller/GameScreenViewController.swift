@@ -13,18 +13,38 @@ class GameScreenViewController: UIViewController {
     @IBOutlet var gameScreenCollectionView: UICollectionView!
     @IBOutlet var gameDescriptionLbl: UILabel!
     @IBOutlet var goBackBtn: UIButton!
+    @IBOutlet var likeBtn: UIButton!
     
     static var gameInfo = [ShortScreenShots]()
     static var backgroundImage = UIImageView()
     static var descriptionText:String = ""
+    
+    static var currentGame = [GameInfoModel]()
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gameDescriptionLbl.text = GameScreenViewController.descriptionText
         innerImageView.image = GameScreenViewController.backgroundImage.image
     }
+    
     @IBAction func goBackBtnTapped(_ sender: Any) {
         dismiss(animated: true,completion: nil)
+        if(!GameScreenViewController.currentGame.isEmpty){
+            GameScreenViewController.currentGame.removeLast()
+            
+        }
+    }
+    
+    @IBAction func likeBtnTapped(_ sender: Any) {
+        count += 1
+        if(count % 2 == 0){
+            likeBtn.setImage(UIImage(named: "heart_3_64"), for: .normal)
+            LikedGamesViewController.likedGames.removeLast()
+        }else{
+            likeBtn.setImage(UIImage(named: "broken-heart_64"), for: .normal)
+            LikedGamesViewController.likedGames.append(GameScreenViewController.currentGame[0])
+        }
     }
 }
 

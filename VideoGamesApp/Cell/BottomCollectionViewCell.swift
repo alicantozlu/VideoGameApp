@@ -24,8 +24,6 @@ class BottomCollectionViewCell: UICollectionViewCell {
         releaseDateLbl.text = model.released
         gameImageView.loadImage(from: model.background_image!)
         innerImageView.loadImage(from: model.background_image!)
-        //gameImageView.loadFrom(URLAddress: model.background_image!)
-        //innerImageView.loadFrom(URLAddress: model.background_image!)
         ratingLbl.text = "\(model.rating!)"
     }
 }

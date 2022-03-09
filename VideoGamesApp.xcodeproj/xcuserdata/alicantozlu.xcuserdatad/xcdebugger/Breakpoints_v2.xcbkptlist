@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkName = "goBackBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
