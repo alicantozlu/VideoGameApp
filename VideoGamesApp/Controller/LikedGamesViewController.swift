@@ -21,10 +21,10 @@ class LikedGamesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async { [self] in
+      //  DispatchQueue.main.async { [self] in
             self.likedGamesCollectionView.reloadData()
             LikedGamesViewController.likedGames.isEmpty ? (self.likedGamesCollectionView.backgroundView?.isHidden = false) : (self.likedGamesCollectionView.backgroundView?.isHidden = true)
-        }
+ //       }
     }
 }
 
