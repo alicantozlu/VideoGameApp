@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQs-GY-FEP">
                         <rect key="frame" x="10" y="5" width="395" height="205"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guh-gl-x7d" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guh-gl-x7d" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="395" id="51F-nN-SDr"/>
@@ -31,86 +31,87 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebm-ga-Jeg">
-                                <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qXm-cL-k9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXj-eE-oCP">
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.85000002384185791" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ccX-5k-HNm">
+                                    <rect key="frame" x="0.0" y="0.0" width="395" height="29"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVS-Xb-lhp">
-                                            <rect key="frame" x="348.5" y="2" width="41.5" height="24"/>
-                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-3p-BLF">
-                                            <rect key="frame" x="85" y="175" width="225.5" height="25"/>
-                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2013-09-17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNU-6A-kgv">
-                                            <rect key="frame" x="5" y="2" width="110" height="24"/>
-                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="shadowColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8e-dI-hNI">
-                                            <rect key="frame" x="317.5" y="2" width="22" height="24"/>
-                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
-                                            <color key="textColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-bd-aEp" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="29" width="340" height="143.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="143.5" id="J3g-3C-uVn"/>
-                                                <constraint firstAttribute="width" constant="340" id="P5s-YB-nmk"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="cd9-bd-aEp" secondAttribute="trailing" constant="28" id="BXR-4e-Jkn"/>
-                                        <constraint firstItem="cd9-bd-aEp" firstAttribute="leading" secondItem="qXm-cL-k9L" secondAttribute="leading" constant="27" id="Ua1-fA-taa"/>
-                                        <constraint firstItem="uVS-Xb-lhp" firstAttribute="top" secondItem="qXm-cL-k9L" secondAttribute="top" constant="2" id="YLN-eO-zKJ"/>
-                                        <constraint firstItem="lNU-6A-kgv" firstAttribute="leading" secondItem="qXm-cL-k9L" secondAttribute="leading" constant="5" id="ZUF-CN-8II"/>
-                                        <constraint firstItem="bmo-3p-BLF" firstAttribute="centerX" secondItem="qXm-cL-k9L" secondAttribute="centerX" id="bTP-Ym-tID"/>
-                                        <constraint firstItem="cd9-bd-aEp" firstAttribute="top" secondItem="lNU-6A-kgv" secondAttribute="bottom" constant="3" id="g2T-U9-b6B"/>
-                                        <constraint firstItem="J8e-dI-hNI" firstAttribute="centerY" secondItem="uVS-Xb-lhp" secondAttribute="centerY" id="gzX-17-4x6"/>
-                                        <constraint firstAttribute="bottom" secondItem="bmo-3p-BLF" secondAttribute="bottom" constant="5" id="hnc-VL-XQL"/>
-                                        <constraint firstAttribute="trailing" secondItem="uVS-Xb-lhp" secondAttribute="trailing" constant="5" id="juf-ks-syE"/>
-                                        <constraint firstItem="uVS-Xb-lhp" firstAttribute="leading" secondItem="J8e-dI-hNI" secondAttribute="trailing" constant="9" id="nCN-i7-QPi"/>
-                                        <constraint firstItem="lNU-6A-kgv" firstAttribute="top" secondItem="qXm-cL-k9L" secondAttribute="top" constant="2" id="nYX-nM-NQO"/>
-                                    </constraints>
                                 </view>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="205" id="0fs-dJ-V3R"/>
-                                    <constraint firstAttribute="width" constant="395" id="MBo-ao-soo"/>
-                                </constraints>
                                 <blurEffect style="light"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebm-ga-Jeg">
+                                <rect key="frame" x="0.0" y="173" width="395" height="32"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qXm-cL-k9L">
+                                    <rect key="frame" x="0.0" y="0.0" width="395" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.85000002384185791" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EMD-eh-1wR">
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9b-o0-8Kg">
+                                        <rect key="frame" x="348.5" y="2" width="41.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adM-Wk-QWT">
+                                        <rect key="frame" x="85" y="175" width="225.5" height="25"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2013-09-17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4E-mh-UqQ">
+                                        <rect key="frame" x="5" y="2" width="110" height="24"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEB-ZG-axa">
+                                        <rect key="frame" x="317.5" y="2" width="22" height="24"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="0.81468049109999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-MY-iQX" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="29" width="295" height="143.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="143.5" id="b6i-wz-mef"/>
+                                            <constraint firstAttribute="width" constant="295" id="gqb-J8-gdK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R9b-o0-8Kg" firstAttribute="leading" secondItem="NEB-ZG-axa" secondAttribute="trailing" constant="9" id="6gj-HF-7RT"/>
+                                    <constraint firstItem="A4E-mh-UqQ" firstAttribute="leading" secondItem="EMD-eh-1wR" secondAttribute="leading" constant="5" id="9Nn-0t-iOj"/>
+                                    <constraint firstItem="UhB-MY-iQX" firstAttribute="top" secondItem="A4E-mh-UqQ" secondAttribute="bottom" constant="3" id="EHQ-Gz-4TD"/>
+                                    <constraint firstItem="R9b-o0-8Kg" firstAttribute="top" secondItem="EMD-eh-1wR" secondAttribute="top" constant="2" id="Gif-dc-Gi8"/>
+                                    <constraint firstItem="UhB-MY-iQX" firstAttribute="leading" secondItem="EMD-eh-1wR" secondAttribute="leading" constant="50" id="Mso-Q9-C6i"/>
+                                    <constraint firstItem="adM-Wk-QWT" firstAttribute="centerX" secondItem="EMD-eh-1wR" secondAttribute="centerX" id="a2p-6G-xNF"/>
+                                    <constraint firstItem="NEB-ZG-axa" firstAttribute="centerY" secondItem="R9b-o0-8Kg" secondAttribute="centerY" id="emn-yh-Lyr"/>
+                                    <constraint firstItem="A4E-mh-UqQ" firstAttribute="top" secondItem="EMD-eh-1wR" secondAttribute="top" constant="2" id="hnF-KB-jLP"/>
+                                    <constraint firstAttribute="trailing" secondItem="R9b-o0-8Kg" secondAttribute="trailing" constant="5" id="hyD-8W-aEg"/>
+                                    <constraint firstAttribute="trailing" secondItem="UhB-MY-iQX" secondAttribute="trailing" constant="50" id="tUF-U4-g62"/>
+                                    <constraint firstAttribute="bottom" secondItem="adM-Wk-QWT" secondAttribute="bottom" constant="5" id="vCa-dn-dJY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="guh-gl-x7d" secondAttribute="bottom" id="GPR-8P-eYj"/>
                             <constraint firstAttribute="width" constant="395" id="Jrp-fZ-hAM"/>
                             <constraint firstItem="guh-gl-x7d" firstAttribute="leading" secondItem="GQs-GY-FEP" secondAttribute="leading" id="M5m-Ck-Vfa"/>
-                            <constraint firstItem="Ebm-ga-Jeg" firstAttribute="top" secondItem="GQs-GY-FEP" secondAttribute="top" id="RmV-Px-UE6"/>
+                            <constraint firstItem="Ebm-ga-Jeg" firstAttribute="top" secondItem="GQs-GY-FEP" secondAttribute="top" constant="173" id="RmV-Px-UE6"/>
                             <constraint firstItem="Ebm-ga-Jeg" firstAttribute="leading" secondItem="GQs-GY-FEP" secondAttribute="leading" id="U0c-fY-aJh"/>
                             <constraint firstAttribute="trailing" secondItem="Ebm-ga-Jeg" secondAttribute="trailing" id="l3q-Cj-kLy"/>
                             <constraint firstItem="guh-gl-x7d" firstAttribute="top" secondItem="GQs-GY-FEP" secondAttribute="top" id="lZr-dK-tFQ"/>
@@ -144,12 +145,14 @@
             </constraints>
             <size key="customSize" width="369" height="203"/>
             <connections>
+                <outlet property="blurBottom" destination="Ebm-ga-Jeg" id="aYt-l6-0ec"/>
+                <outlet property="blurTop" destination="oXj-eE-oCP" id="idD-R6-MVO"/>
                 <outlet property="gameImageView" destination="guh-gl-x7d" id="cA8-hO-gZF"/>
-                <outlet property="gameNameLbl" destination="bmo-3p-BLF" id="Oiv-VX-jZB"/>
-                <outlet property="gameRatingStarLbl" destination="J8e-dI-hNI" id="VWL-tS-ta8"/>
-                <outlet property="innerImageView" destination="cd9-bd-aEp" id="PvM-lk-sTA"/>
-                <outlet property="ratingLbl" destination="uVS-Xb-lhp" id="lTb-cL-RYr"/>
-                <outlet property="releaseDateLbl" destination="lNU-6A-kgv" id="6u6-Od-Weo"/>
+                <outlet property="gameNameLbl" destination="adM-Wk-QWT" id="2pc-yc-ISA"/>
+                <outlet property="gameRatingStarLbl" destination="NEB-ZG-axa" id="1Y7-8c-ev9"/>
+                <outlet property="innerImageView" destination="UhB-MY-iQX" id="okF-Gh-SkV"/>
+                <outlet property="ratingLbl" destination="R9b-o0-8Kg" id="hzC-hh-Tg8"/>
+                <outlet property="releaseDateLbl" destination="A4E-mh-UqQ" id="ojo-wf-8In"/>
             </connections>
             <point key="canvasLocation" x="362.31884057971018" y="92.745535714285708"/>
         </collectionViewCell>

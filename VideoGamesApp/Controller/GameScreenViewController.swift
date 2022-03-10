@@ -14,10 +14,19 @@ class GameScreenViewController: UIViewController {
     @IBOutlet var gameDescriptionLbl: UILabel!
     @IBOutlet var goBackBtn: UIButton!
     @IBOutlet var likeBtn: UIButton!
+    @IBOutlet var gameNameLbl: UILabel!
+    @IBOutlet var gameReleaseDate: UILabel!
+    @IBOutlet var metaValLbl: UILabel!
+    @IBOutlet var genreLbl: UILabel!
     
     static var gameInfo = [ShortScreenShots]()
     static var backgroundImage = UIImageView()
     static var descriptionText:String = ""
+    
+    static var gameName:String = ""
+    static var releaseDate:String = ""
+    static var metaVal:String = ""
+    static var genre = [Genres]()
     
     static var currentGame = [GameInfoModel]()
     var count = 0
@@ -26,23 +35,38 @@ class GameScreenViewController: UIViewController {
         super.viewDidLoad()
         gameDescriptionLbl.text = GameScreenViewController.descriptionText
         innerImageView.image = GameScreenViewController.backgroundImage.image
+        gameNameLbl.clearName(str: GameScreenViewController.gameName)
+        gameReleaseDate.changeDateFormat(str: GameScreenViewController.releaseDate)
+        metaValLbl.text = GameScreenViewController.metaVal
+        genreLbl.text = configureGenre(gen: GameScreenViewController.genre)
+        
+        gameNameLbl.text = GameScreenViewController.gameName
+        gameNameLbl.text = GameScreenViewController.gameName
+        
+        func configureGenre(gen: [Genres]) -> (String){
+            var text = ""
+            for i in 0..<gen.count{
+                text += gen[i].name! + " "
+            }
+            return text
+        }
     }
     
     @IBAction func goBackBtnTapped(_ sender: Any) {
         dismiss(animated: true,completion: nil)
         if(!GameScreenViewController.currentGame.isEmpty){
             GameScreenViewController.currentGame.removeLast()
-            
         }
+        
     }
     
     @IBAction func likeBtnTapped(_ sender: Any) {
         count += 1
         if(count % 2 == 0){
-            likeBtn.setImage(UIImage(named: "heart_3_64"), for: .normal)
+            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
             LikedGamesViewController.likedGames.removeLast()
         }else{
-            likeBtn.setImage(UIImage(named: "broken-heart_64"), for: .normal)
+            likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
             LikedGamesViewController.likedGames.append(GameScreenViewController.currentGame[0])
         }
     }

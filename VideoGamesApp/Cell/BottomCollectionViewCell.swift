@@ -15,40 +15,28 @@ class BottomCollectionViewCell: UICollectionViewCell {
     @IBOutlet var ratingLbl: UILabel!
     @IBOutlet var innerImageView: ImageConfigure!
     @IBOutlet var gameRatingStarLbl: UILabel!
+    @IBOutlet var blurTop: UIVisualEffectView!
+    @IBOutlet var blurBottom: UIVisualEffectView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        blurTop.clipsToBounds = true
+        blurTop.layer.cornerRadius = 10
+        blurTop.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        blurBottom.clipsToBounds = true
+        blurBottom.layer.cornerRadius = 10
+        blurBottom.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
     func configure(model: GameInfoModel){
-        gameNameLbl.text = clearName(str: model.name!)
+        gameNameLbl.clearName(str: model.name!)
         gameImageView.loadImage(from: model.background_image!)
         innerImageView.loadImage(from: model.background_image!)
         ratingLbl.text = "\(model.rating!)"
         gameRatingStarLbl.text = String(repeating: " 👾", count: Int(model.rating!))
-        releaseDateLbl.text = changeDateFormat(str: model.released!)
-    }
-    
-    //tarih formatini yil-ay-gun formatindan gun.ay.yil formatina cevir
-    func changeDateFormat(str: String) -> (String) {
-        let data = Array(str)
-        let year = String(data[0..<4])
-        let month = String(data[5..<7])
-        let day = String(data[8..<10])
-        
-        return "\(day).\(month).\(year)"
-    }
-    
-    //Oyun isimlerindeki (tarih) ifadelerini kaldir
-    func clearName(str:String) -> (String){
-        var name:String = ""
-        for char in str{
-            if (char == "("){
-                break
-            }
-            name += String(char)
-        }
-        return name
+        releaseDateLbl.changeDateFormat(str: model.released!)
     }
 }
 

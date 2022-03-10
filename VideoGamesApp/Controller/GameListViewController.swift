@@ -114,68 +114,56 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var gameDetailRequest = GameListRequest(slug: "")
         if(isFiltering){
             GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
             GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
             GameScreenViewController.currentGame.append(filteredGames[indexPath.row])
+            GameScreenViewController.gameName = filteredGames[indexPath.row].name!
+            GameScreenViewController.releaseDate = filteredGames[indexPath.row].released!
+            GameScreenViewController.metaVal = String(filteredGames[indexPath.row].metacritic!)
+            GameScreenViewController.genre = filteredGames[indexPath.row].genres!
             
-            let gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
-            gameDetailRequest.getGameDetail { result in
-                do {
-                    GameScreenViewController.descriptionText = try result.get().description_raw!
-                    DispatchQueue.main.async {
-                        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                        gameScreenVC.modalPresentationStyle = .fullScreen
-                        gameScreenVC.modalTransitionStyle = .flipHorizontal
-                        self.present(gameScreenVC, animated: true, completion: nil)
-                    }
-                }catch let error {
-                    print(error)
-                }
-            }
-            
+            gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
         }else{
             if(collectionView == topCollectionView){
                 GameScreenViewController.gameInfo = topList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: topList[indexPath.row].background_image!)
                 GameScreenViewController.currentGame.append(topList[indexPath.row])
-                let gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
-                gameDetailRequest.getGameDetail { result in
-                    do {
-                        GameScreenViewController.descriptionText = try result.get().description_raw!
-                        DispatchQueue.main.async {
-                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                            gameScreenVC.modalPresentationStyle = .fullScreen
-                            gameScreenVC.modalTransitionStyle = .flipHorizontal
-                            self.present(gameScreenVC, animated: true, completion: nil)
-                        }
-                    }catch let error {
-                        print(error)
-                    }
-                }
-                // BottomL
+                GameScreenViewController.gameName = topList[indexPath.row].name!
+                GameScreenViewController.releaseDate = topList[indexPath.row].released!
+                GameScreenViewController.metaVal = String(topList[indexPath.row].metacritic!)
+                GameScreenViewController.genre = topList[indexPath.row].genres!
+                
+                gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
             }else{
                 GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
                 GameScreenViewController.currentGame.append(bottomList[indexPath.row])
-                let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
-                gameDetailRequest.getGameDetail { result in
-                    do {
-                        GameScreenViewController.descriptionText = try result.get().description_raw!
-                        DispatchQueue.main.async {
-                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                            gameScreenVC.modalPresentationStyle = .fullScreen
-                            gameScreenVC.modalTransitionStyle = .flipHorizontal
-                            self.present(gameScreenVC, animated: true, completion: nil)
-                        }
-                    }catch let error {
-                        print(error)
-                    }
+                GameScreenViewController.gameName = bottomList[indexPath.row].name!
+                GameScreenViewController.releaseDate = bottomList[indexPath.row].released!
+                GameScreenViewController.metaVal = String(bottomList[indexPath.row].metacritic!)
+                GameScreenViewController.genre = bottomList[indexPath.row].genres!
+                
+                gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
+            }
+        }
+   
+        gameDetailRequest.getGameDetail { result in
+            do {
+                GameScreenViewController.descriptionText = try result.get().description_raw!
+                DispatchQueue.main.async {
+                    let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                    gameScreenVC.modalPresentationStyle = .fullScreen
+                    gameScreenVC.modalTransitionStyle = .flipHorizontal
+                    self.present(gameScreenVC, animated: true, completion: nil)
                 }
+            }catch let error {
+                print(error)
             }
         }
     }
-    
+
     // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

@@ -12,7 +12,7 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 class ImageConfigure: UIImageView {
     
     var task: URLSessionDataTask!
-    let spinner = UIActivityIndicatorView(style: .gray)
+    let spinner = UIActivityIndicatorView(style: .white)
     
     func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else {

@@ -55,9 +55,9 @@ class OnboardingViewController: UIViewController {
         obCollectionView.delegate = self
         obCollectionView.dataSource = self
         
-        let page1 = SlideModel(header: "To Bus Ticket App!", description: "We are happy to see you.", image: "heart_32")
-        let page2 = SlideModel(header: "Safe & Easy Payment!", description: "Anti-froud technology \n & \n Advanced triple layered security", image: "heart_32")
-        let page3 = SlideModel(header: "Extra Spacing!", description: "Seat spacing up to 2 meter \n \n Enjoy your spacious travel", image: "home_32")
+        let page1 = SlideModel(header: "Let's make your game better!", description: "", image: "heart_32")
+        let page2 = SlideModel(header: "Find the best game for you!", description: "You can choose the game you like", image: "heart_32")
+        let page3 = SlideModel(header: "Start playing today!", description: "", image: "home_32")
         //let page4 = SlideModel(header: "We Go Everywhere!", description: "65000+ Routes \n & \n Over 2300 Operators Worldwide", image: "thumbs-up_32")
         slides = [page1, page2, page3]
         

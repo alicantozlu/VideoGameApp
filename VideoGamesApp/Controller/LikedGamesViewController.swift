@@ -8,7 +8,7 @@
 import UIKit
 
 class LikedGamesViewController: UIViewController {
-
+    
     @IBOutlet var likedGamesCollectionView: UICollectionView!
     static var likedGames = [GameInfoModel]()
     
@@ -21,10 +21,10 @@ class LikedGamesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      //  DispatchQueue.main.async { [self] in
-            self.likedGamesCollectionView.reloadData()
-            LikedGamesViewController.likedGames.isEmpty ? (self.likedGamesCollectionView.backgroundView?.isHidden = false) : (self.likedGamesCollectionView.backgroundView?.isHidden = true)
- //       }
+        //  DispatchQueue.main.async { [self] in
+        self.likedGamesCollectionView.reloadData()
+        LikedGamesViewController.likedGames.isEmpty ? (self.likedGamesCollectionView.backgroundView?.isHidden = false) : (self.likedGamesCollectionView.backgroundView?.isHidden = true)
+        //       }
     }
 }
 
@@ -39,5 +39,24 @@ extension LikedGamesViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        GameScreenViewController.gameInfo = LikedGamesViewController.likedGames[indexPath.row].short_screenshots!
+        GameScreenViewController.backgroundImage.loadFrom(URLAddress: LikedGamesViewController.likedGames[indexPath.row].background_image!)
+        GameScreenViewController.currentGame.append(LikedGamesViewController.likedGames[indexPath.row])
+        
+        let gameDetailRequest = GameListRequest(slug: LikedGamesViewController.likedGames[indexPath.row].slug!)
+        gameDetailRequest.getGameDetail { result in
+            do {
+                GameScreenViewController.descriptionText = try result.get().description_raw!
+                DispatchQueue.main.async {
+                    let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                    gameScreenVC.modalPresentationStyle = .fullScreen
+                    gameScreenVC.modalTransitionStyle = .flipHorizontal
+                    self.present(gameScreenVC, animated: true, completion: nil)
+                }
+            }catch let error {
+                print(error)
+            }
+        }
+    }
 }

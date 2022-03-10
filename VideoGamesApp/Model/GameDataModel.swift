@@ -18,7 +18,13 @@ struct GameInfoModel: Decodable{
     let released: String?
     let background_image: String?
     let rating: Double?
+    let metacritic: Int?
+    let genres: [Genres]?
     let short_screenshots: [ShortScreenShots]?
+}
+
+struct Genres: Decodable{
+    let name: String?
 }
 
 struct ShortScreenShots: Decodable{
