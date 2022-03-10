@@ -46,8 +46,8 @@
             filePath = "VideoGamesApp/Controller/GameScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "goBackBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>

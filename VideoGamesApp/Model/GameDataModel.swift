@@ -12,7 +12,11 @@ struct GameDataModel: Decodable {
     let results: [GameInfoModel]?
 }
 
-struct GameInfoModel: Decodable{
+struct GameInfoModel: Decodable,Equatable{
+    static func == (lhs: GameInfoModel, rhs: GameInfoModel) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     let slug: String?
     let name: String?
     let released: String?

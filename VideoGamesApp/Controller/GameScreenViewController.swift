@@ -18,6 +18,7 @@ class GameScreenViewController: UIViewController {
     @IBOutlet var gameReleaseDate: UILabel!
     @IBOutlet var metaValLbl: UILabel!
     @IBOutlet var genreLbl: UILabel!
+    @IBOutlet var gameScreenPageController: UIPageControl!
     
     static var gameInfo = [ShortScreenShots]()
     static var backgroundImage = UIImageView()
@@ -29,7 +30,12 @@ class GameScreenViewController: UIViewController {
     static var genre = [Genres]()
     
     static var currentGame = [GameInfoModel]()
-    var count = 0
+
+    var currentPage = 0{
+        didSet{
+            gameScreenPageController.currentPage = currentPage
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +49,19 @@ class GameScreenViewController: UIViewController {
         gameNameLbl.text = GameScreenViewController.gameName
         gameNameLbl.text = GameScreenViewController.gameName
         
+        if(LikedGamesViewController.likedGames.contains {$0 == GameScreenViewController.currentGame[0]}){
+            likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
+        } else{
+            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
+        }
+        
+        
+        
         func configureGenre(gen: [Genres]) -> (String){
             var text = ""
             for i in 0..<gen.count{
-                text += gen[i].name! + " "
+                if(i == 3) {break}
+                (i == gen.count-1 || i == 2) ? (text += gen[i].name! + " ") : (text += gen[i].name! + ", ")
             }
             return text
         }
@@ -61,13 +76,12 @@ class GameScreenViewController: UIViewController {
     }
     
     @IBAction func likeBtnTapped(_ sender: Any) {
-        count += 1
-        if(count % 2 == 0){
-            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
-            LikedGamesViewController.likedGames.removeLast()
-        }else{
-            likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
+        if(likeBtn.currentImage == UIImage(named: "heart")){
             LikedGamesViewController.likedGames.append(GameScreenViewController.currentGame[0])
+            likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
+        } else if (likeBtn.currentImage == UIImage(named: "heart_filled")){
+            LikedGamesViewController.likedGames.removeLast()
+            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
 }
@@ -82,4 +96,15 @@ extension GameScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.comfigure(model: GameScreenViewController.gameInfo[indexPath.row])
         return cell
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
+    }
 }
+
+extension Array {
+     func containS<T>(obj: T) -> Bool where T: Equatable {
+         return !self.filter({$0 as? T == obj}).isEmpty
+     }
+ }
