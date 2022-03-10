@@ -64,7 +64,7 @@ class GameListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         gameListRequest.getGames { result in
             do {
                 self.gameList = try result.get().results!
@@ -73,6 +73,9 @@ class GameListViewController: UIViewController {
                 print(error)
             }
         }
+        
+        topCollectionView.tag = 1
+        bottomCollectionView.tag = 2
         
         tabbarConfig()
         
@@ -87,6 +90,22 @@ class GameListViewController: UIViewController {
         
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
         bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
+    }
+    
+    var whichCollectionViewScrolled = "" {
+        willSet{
+            print(newValue)
+        }
+    }
+    var isFirstCollectionViewScrolled = false {
+        willSet{
+            print("First CollectionView Scrolled : \(newValue)")
+        }
+    }
+    var isSecondCollectionViewScrolled = false {
+        willSet{
+            print("Second CollectionView Scrolled : \(newValue)")
+        }
     }
     
     // TabBar Ozellestirmeleri
@@ -148,7 +167,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
                 gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
             }
         }
-   
+        
         gameDetailRequest.getGameDetail { result in
             do {
                 GameScreenViewController.descriptionText = try result.get().description_raw!
@@ -163,7 +182,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             }
         }
     }
-
+    
     // Hucre Sayisi - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -221,8 +240,25 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     //Pagecontroller Hareketi
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let width = scrollView.frame.width
-        currentPage = Int(scrollView.contentOffset.x / width)
+        
+        if let collectionView = scrollView as? UICollectionView {
+            switch collectionView.tag {
+            case 1:
+                whichCollectionViewScrolled = "First"
+                isFirstCollectionViewScrolled = true
+                isSecondCollectionViewScrolled = false
+                let width = scrollView.frame.width
+                currentPage = Int(scrollView.contentOffset.x / width)
+            case 2:
+                whichCollectionViewScrolled = "second"
+                isFirstCollectionViewScrolled = false
+                isSecondCollectionViewScrolled = true
+            default:
+                whichCollectionViewScrolled = "unknown"
+            }
+        } else{
+            print("cant cast")
+        }
     }
 }
 
