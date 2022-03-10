@@ -15,12 +15,14 @@ class GameListViewController: UIViewController {
     @IBOutlet var bottomCollectionView: UICollectionView!
     @IBOutlet var innerStackView: UIStackView!
     
+    //PageController kontrolu
     var currentPage = 0 {
         didSet{
             gamePageController.currentPage = currentPage
         }
     }
     
+    //Liste sonuna gelindiginde yeni oyunlarin eklenecegi liste
     var newGameList = [GameInfoModel](){
         didSet{
             print("BOTTOM:\(newGameList)")
@@ -30,10 +32,10 @@ class GameListViewController: UIViewController {
             DispatchQueue.main.async {
                 self.bottomCollectionView.reloadData()
             }
-            
         }
     }
     
+    //Ilk acilista oyunlarin eklenecegi model
     var gameList = [GameInfoModel](){
         didSet {
             // Array icerisine veri degisimi olursa tablolar guncellenmesi icin
@@ -62,7 +64,6 @@ class GameListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabbarConfig()
         
         gameListRequest.getGames { result in
             do {
@@ -73,7 +74,17 @@ class GameListViewController: UIViewController {
             }
         }
         
-        //let backgroundEmpty = EmptyView()
+        topCollectionView.tag = 1
+        bottomCollectionView.tag = 2
+        
+        tabbarConfig()
+        
+        gameSearchBar.searchBarStyle = .minimal
+        gameSearchBar.searchTextField.backgroundColor = .clear
+        gameSearchBar.searchTextField.textColor = .white
+        gameSearchBar.searchTextField.tintColor = .white
+        gameSearchBar.searchTextField.leftView?.tintColor = .white
+        
         bottomCollectionView.backgroundView = EmptyView()
         bottomCollectionView.backgroundView?.isHidden = true
         
@@ -81,20 +92,30 @@ class GameListViewController: UIViewController {
         bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
     }
     
+    var whichCollectionViewScrolled = "" {
+        willSet{
+            print(newValue)
+        }
+    }
+    var isFirstCollectionViewScrolled = false {
+        willSet{
+            print("First CollectionView Scrolled : \(newValue)")
+        }
+    }
+    var isSecondCollectionViewScrolled = false {
+        willSet{
+            print("Second CollectionView Scrolled : \(newValue)")
+        }
+    }
+    
     // TabBar Ozellestirmeleri
     private func tabbarConfig() {
-        guard let tabBar = tabBarController?.tabBar else { return }
-        tabBar.isTranslucent = true
+        let tabBar = UITabBar.appearance()
+        tabBar.barTintColor = UIColor.clear
         tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage() // add this if you want remove tabBar separator
-        tabBar.barTintColor = .clear
-        tabBar.backgroundColor = .clear // here is your tabBar color
-        tabBar.layer.backgroundColor = UIColor.clear.cgColor
-        let blurEffect = UIBlurEffect(style: .light) // here you can change blur style
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = tabBar.bounds
-        blurView.autoresizingMask = .flexibleWidth
-        tabBar.insertSubview(blurView, at: 0)
+        tabBar.shadowImage = UIImage()
+        tabBar.isTranslucent = true
+        tabBar.backgroundColor = .clear
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .darkGray
     }
@@ -112,64 +133,52 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var gameDetailRequest = GameListRequest(slug: "")
         if(isFiltering){
             GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
             GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
             GameScreenViewController.currentGame.append(filteredGames[indexPath.row])
+            GameScreenViewController.gameName = filteredGames[indexPath.row].name!
+            GameScreenViewController.releaseDate = filteredGames[indexPath.row].released!
+            GameScreenViewController.metaVal = String(filteredGames[indexPath.row].metacritic!)
+            GameScreenViewController.genre = filteredGames[indexPath.row].genres!
             
-            let gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
-            gameDetailRequest.getGameDetail { result in
-                do {
-                    GameScreenViewController.descriptionText = try result.get().description_raw!
-                    DispatchQueue.main.async {
-                        let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                        gameScreenVC.modalPresentationStyle = .fullScreen
-                        gameScreenVC.modalTransitionStyle = .flipHorizontal
-                        self.present(gameScreenVC, animated: true, completion: nil)
-                    }
-                }catch let error {
-                    print(error)
-                }
-            }
-            
+            gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
         }else{
             if(collectionView == topCollectionView){
                 GameScreenViewController.gameInfo = topList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: topList[indexPath.row].background_image!)
                 GameScreenViewController.currentGame.append(topList[indexPath.row])
-                let gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
-                gameDetailRequest.getGameDetail { result in
-                    do {
-                        GameScreenViewController.descriptionText = try result.get().description_raw!
-                        DispatchQueue.main.async {
-                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                            gameScreenVC.modalPresentationStyle = .fullScreen
-                            gameScreenVC.modalTransitionStyle = .flipHorizontal
-                            self.present(gameScreenVC, animated: true, completion: nil)
-                        }
-                    }catch let error {
-                        print(error)
-                    }
-                }
-                // BottomL
+                GameScreenViewController.gameName = topList[indexPath.row].name!
+                GameScreenViewController.releaseDate = topList[indexPath.row].released!
+                GameScreenViewController.metaVal = String(topList[indexPath.row].metacritic!)
+                GameScreenViewController.genre = topList[indexPath.row].genres!
+                
+                gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
             }else{
                 GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
                 GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
                 GameScreenViewController.currentGame.append(bottomList[indexPath.row])
-                let gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
-                gameDetailRequest.getGameDetail { result in
-                    do {
-                        GameScreenViewController.descriptionText = try result.get().description_raw!
-                        DispatchQueue.main.async {
-                            let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
-                            gameScreenVC.modalPresentationStyle = .fullScreen
-                            gameScreenVC.modalTransitionStyle = .flipHorizontal
-                            self.present(gameScreenVC, animated: true, completion: nil)
-                        }
-                    }catch let error {
-                        print(error)
-                    }
+                GameScreenViewController.gameName = bottomList[indexPath.row].name!
+                GameScreenViewController.releaseDate = bottomList[indexPath.row].released!
+                GameScreenViewController.metaVal = String(bottomList[indexPath.row].metacritic!)
+                GameScreenViewController.genre = bottomList[indexPath.row].genres!
+                
+                gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
+            }
+        }
+        
+        gameDetailRequest.getGameDetail { result in
+            do {
+                GameScreenViewController.descriptionText = try result.get().description_raw!
+                DispatchQueue.main.async {
+                    let gameScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier")
+                    gameScreenVC.modalPresentationStyle = .fullScreen
+                    gameScreenVC.modalTransitionStyle = .flipHorizontal
+                    self.present(gameScreenVC, animated: true, completion: nil)
                 }
+            }catch let error {
+                print(error)
             }
         }
     }
@@ -231,8 +240,25 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     //Pagecontroller Hareketi
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let width = scrollView.frame.width
-        currentPage = Int(scrollView.contentOffset.x / width)
+        
+        if let collectionView = scrollView as? UICollectionView {
+            switch collectionView.tag {
+            case 1:
+                whichCollectionViewScrolled = "First"
+                isFirstCollectionViewScrolled = true
+                isSecondCollectionViewScrolled = false
+                let width = scrollView.frame.width
+                currentPage = Int(scrollView.contentOffset.x / width)
+            case 2:
+                whichCollectionViewScrolled = "second"
+                isFirstCollectionViewScrolled = false
+                isSecondCollectionViewScrolled = true
+            default:
+                whichCollectionViewScrolled = "unknown"
+            }
+        } else{
+            print("cant cast")
+        }
     }
 }
 

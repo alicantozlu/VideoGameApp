@@ -16,16 +16,16 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-fP-Yqm">
                     <rect key="frame" x="0.0" y="309" width="414" height="278"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="278" id="e0U-8v-YPd"/>
-                        <constraint firstAttribute="width" constant="414" id="vBE-o3-H6o"/>
+                        <constraint firstAttribute="height" constant="278" id="4dc-RM-ClM"/>
+                        <constraint firstAttribute="width" constant="414" id="rI9-bM-NJj"/>
                     </constraints>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iF3-Am-1tW"/>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oTS-Sb-JVO"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dql-EH-6f8"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aHg-RF-YeP"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>

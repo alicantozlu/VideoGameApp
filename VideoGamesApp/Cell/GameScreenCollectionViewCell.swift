@@ -9,9 +9,10 @@ import UIKit
 
 class GameScreenCollectionViewCell: UICollectionViewCell {
     // gameScreenCellIdentifier
-    @IBOutlet var sliderImageView: UIImageView!
+    @IBOutlet var sliderImageView: ImageConfigure!
     
     func comfigure(model: ShortScreenShots){
-        self.sliderImageView.loadFrom(URLAddress: model.image!)
+        self.sliderImageView.loadImage(from: model.image!)
+        //self.sliderImageView.loadFrom(URLAddress: model.image!)
     }
 }

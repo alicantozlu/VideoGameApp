@@ -19,14 +19,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Fd-RvP">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KTl-0d-hLQ" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KTl-0d-hLQ" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="EHO-9X-xCn"/>
                                     <constraint firstAttribute="width" constant="420" id="by3-Rc-RxO"/>
                                 </constraints>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXe-Hk-OMd">
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXe-Hk-OMd">
                                 <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wJ1-Wf-gDq">
                                     <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
@@ -39,14 +39,26 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="380" height="180"/>
+                                <rect key="frame" x="14" y="7.5" width="392" height="205"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="QND-Oj-9EO"/>
-                                    <constraint firstAttribute="width" constant="380" id="doj-d2-NnB"/>
+                                    <constraint firstAttribute="height" constant="205" id="QND-Oj-9EO"/>
+                                    <constraint firstAttribute="width" constant="392" id="doj-d2-NnB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -54,15 +66,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KTl-0d-hLQ" firstAttribute="leading" secondItem="oYx-Fd-RvP" secondAttribute="leading" id="3fF-pd-wyF"/>
-                            <constraint firstItem="sXb-p2-KMb" firstAttribute="top" secondItem="oYx-Fd-RvP" secondAttribute="top" constant="20" id="9vs-2J-pLe"/>
                             <constraint firstAttribute="bottom" secondItem="KTl-0d-hLQ" secondAttribute="bottom" id="FIb-lM-iak"/>
                             <constraint firstAttribute="height" constant="220" id="Gy9-sr-cMj"/>
                             <constraint firstAttribute="trailing" secondItem="KTl-0d-hLQ" secondAttribute="trailing" id="JH8-SM-kvE"/>
+                            <constraint firstItem="sXb-p2-KMb" firstAttribute="centerY" secondItem="oYx-Fd-RvP" secondAttribute="centerY" id="Ryj-hV-6zm"/>
                             <constraint firstItem="QXe-Hk-OMd" firstAttribute="leading" secondItem="oYx-Fd-RvP" secondAttribute="leading" id="T4K-uu-sBs"/>
-                            <constraint firstAttribute="trailing" secondItem="sXb-p2-KMb" secondAttribute="trailing" constant="20" id="a1I-MD-P2l"/>
-                            <constraint firstItem="sXb-p2-KMb" firstAttribute="leading" secondItem="oYx-Fd-RvP" secondAttribute="leading" constant="20" id="bLH-8X-daf"/>
                             <constraint firstAttribute="bottom" secondItem="QXe-Hk-OMd" secondAttribute="bottom" id="cez-aH-sI8"/>
-                            <constraint firstAttribute="bottom" secondItem="sXb-p2-KMb" secondAttribute="bottom" constant="20" id="jSH-pJ-A9N"/>
+                            <constraint firstItem="sXb-p2-KMb" firstAttribute="centerX" secondItem="oYx-Fd-RvP" secondAttribute="centerX" id="fEn-pO-5cR"/>
                             <constraint firstAttribute="trailing" secondItem="QXe-Hk-OMd" secondAttribute="trailing" id="pC4-Mp-8Pg"/>
                             <constraint firstItem="KTl-0d-hLQ" firstAttribute="top" secondItem="oYx-Fd-RvP" secondAttribute="top" id="qtF-fz-UWH"/>
                             <constraint firstAttribute="width" constant="420" id="t8e-Kl-OVL"/>
