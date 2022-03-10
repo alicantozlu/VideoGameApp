@@ -37,19 +37,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="395" height="205"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYl-ui-CnS">
-                                            <rect key="frame" x="0.0" y="172.5" width="395" height="32.5"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1re-JK-Egp">
-                                                <rect key="frame" x="0.0" y="0.0" width="395" height="32.5"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <blurEffect style="regular"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <integer key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVS-Xb-lhp">
                                             <rect key="frame" x="348.5" y="2" width="41.5" height="24"/>
                                             <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
@@ -90,14 +77,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rYl-ui-CnS" firstAttribute="leading" secondItem="qXm-cL-k9L" secondAttribute="leading" id="2Fr-4c-XpV"/>
                                         <constraint firstAttribute="trailing" secondItem="cd9-bd-aEp" secondAttribute="trailing" constant="28" id="BXR-4e-Jkn"/>
-                                        <constraint firstItem="rYl-ui-CnS" firstAttribute="top" secondItem="cd9-bd-aEp" secondAttribute="bottom" id="HUe-Gj-6Kh"/>
-                                        <constraint firstAttribute="trailing" secondItem="rYl-ui-CnS" secondAttribute="trailing" id="NCg-qH-Xqa"/>
                                         <constraint firstItem="cd9-bd-aEp" firstAttribute="leading" secondItem="qXm-cL-k9L" secondAttribute="leading" constant="27" id="Ua1-fA-taa"/>
                                         <constraint firstItem="uVS-Xb-lhp" firstAttribute="top" secondItem="qXm-cL-k9L" secondAttribute="top" constant="2" id="YLN-eO-zKJ"/>
                                         <constraint firstItem="lNU-6A-kgv" firstAttribute="leading" secondItem="qXm-cL-k9L" secondAttribute="leading" constant="5" id="ZUF-CN-8II"/>
-                                        <constraint firstAttribute="bottom" secondItem="rYl-ui-CnS" secondAttribute="bottom" id="bBr-Ol-Bce"/>
                                         <constraint firstItem="bmo-3p-BLF" firstAttribute="centerX" secondItem="qXm-cL-k9L" secondAttribute="centerX" id="bTP-Ym-tID"/>
                                         <constraint firstItem="cd9-bd-aEp" firstAttribute="top" secondItem="lNU-6A-kgv" secondAttribute="bottom" constant="3" id="g2T-U9-b6B"/>
                                         <constraint firstItem="J8e-dI-hNI" firstAttribute="centerY" secondItem="uVS-Xb-lhp" secondAttribute="centerY" id="gzX-17-4x6"/>

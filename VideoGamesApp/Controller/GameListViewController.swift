@@ -64,8 +64,7 @@ class GameListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabbarConfig()
-        
+                
         gameListRequest.getGames { result in
             do {
                 self.gameList = try result.get().results!
@@ -74,6 +73,14 @@ class GameListViewController: UIViewController {
                 print(error)
             }
         }
+        
+        tabbarConfig()
+        
+        gameSearchBar.searchBarStyle = .minimal
+        gameSearchBar.searchTextField.backgroundColor = .clear
+        gameSearchBar.searchTextField.textColor = .white
+        gameSearchBar.searchTextField.tintColor = .white
+        gameSearchBar.searchTextField.leftView?.tintColor = .white
         
         bottomCollectionView.backgroundView = EmptyView()
         bottomCollectionView.backgroundView?.isHidden = true
@@ -84,36 +91,14 @@ class GameListViewController: UIViewController {
     
     // TabBar Ozellestirmeleri
     private func tabbarConfig() {
-        guard let tabBar = tabBarController?.tabBar else { return }
-        tabBar.isTranslucent = true
+        let tabBar = UITabBar.appearance()
+        tabBar.barTintColor = UIColor.clear
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
-        tabBar.barTintColor = .clear
-        tabBar.backgroundColor = .clear // here is your tabBar color
-        tabBar.layer.backgroundColor = UIColor.clear.cgColor
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight) // here you can change blur style
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = tabBar.bounds
-        blurView.autoresizingMask = .flexibleWidth
-        tabBar.insertSubview(blurView, at: 0)
+        tabBar.isTranslucent = true
+        tabBar.backgroundColor = .clear
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .darkGray
-        
-        /*
-        guard let tabBar = tabBarController?.tabBar else { return }
-        tabBar.isTranslucent = true
-        tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage()
-        tabBar.barTintColor = .clear
-        tabBar.backgroundColor = .clear // here is your tabBar color
-        tabBar.layer.backgroundColor = UIColor.clear.cgColor
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight) // here you can change blur style
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = tabBar.bounds
-        blurView.autoresizingMask = .flexibleWidth
-        tabBar.insertSubview(blurView, at: 0)
-        tabBar.tintColor = .white
-        tabBar.unselectedItemTintColor = .darkGray*/
     }
 }
 

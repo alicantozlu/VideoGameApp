@@ -25,7 +25,7 @@ class BottomCollectionViewCell: UICollectionViewCell {
         gameImageView.loadImage(from: model.background_image!)
         innerImageView.loadImage(from: model.background_image!)
         ratingLbl.text = "\(model.rating!)"
-        gameRatingStarLbl.text = String(repeating: "👾", count: Int(model.rating!))
+        gameRatingStarLbl.text = String(repeating: " 👾", count: Int(model.rating!))
         releaseDateLbl.text = changeDateFormat(str: model.released!)
     }
     

@@ -22,7 +22,7 @@
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dql-EH-6f8"/>
                 <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aHg-RF-YeP"/>
