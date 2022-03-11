@@ -7,25 +7,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyView" customModule="VideoGamesApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyView" customModule="VideoGamesApp" customModuleProvider="target">
+            <connections>
+                <outlet property="notFoundImage" destination="4bV-fP-Yqm" id="lAW-jR-5La"/>
+                <outlet property="textLbl" destination="I53-c4-Byj" id="s96-it-ZWs"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-fP-Yqm">
-                    <rect key="frame" x="0.0" y="309" width="414" height="278"/>
+                    <rect key="frame" x="0.0" y="452" width="414" height="278"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="278" id="4dc-RM-ClM"/>
-                        <constraint firstAttribute="width" constant="414" id="rI9-bM-NJj"/>
+                        <constraint firstAttribute="width" constant="414" id="CdE-qO-dHT"/>
+                        <constraint firstAttribute="height" constant="278" id="GRq-jU-QYn"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTHING TO SEE HERE!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I53-c4-Byj">
+                    <rect key="frame" x="36.5" y="352" width="341.5" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="BEP-bY-Pn5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="30"/>
+                    <color key="textColor" red="0.4681426883" green="0.081040732559999995" blue="0.069996960459999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="1" height="0.0"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dql-EH-6f8"/>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aHg-RF-YeP"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3G5-uP-ESU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4bV-fP-Yqm" secondAttribute="bottom" constant="132" id="IJH-ak-Qbf"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WzQ-ki-7xW"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="top" secondItem="I53-c4-Byj" secondAttribute="bottom" id="fIf-ID-zLU"/>
+                <constraint firstItem="I53-c4-Byj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kTU-pL-yxU"/>
+                <constraint firstItem="4bV-fP-Yqm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kkR-fI-4YQ"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>

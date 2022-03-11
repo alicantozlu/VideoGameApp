@@ -23,26 +23,19 @@ class OnboardingViewController: UIViewController {
             if (currentPage == 0){
                 obSkipBtn.isHidden = false
                 obSkipBtn.setTitle("Skip", for: .normal)
-                
                 obNextBtn.isHidden = true
-                obNextBtn.setTitleColor(UIColor(red: 0/255, green: 31/255, blue: 91/255, alpha: 1), for: .normal)
-                obNextBtn.backgroundColor = UIColor(red: 219/255, green: 248/255, blue: 255/255, alpha: 1)
-                
+
             } else if (currentPage == slides.count-1){
                 obNextBtn.isHidden = false
-                obNextBtn.setTitle("Get Started", for: .normal)
-                obNextBtn.backgroundColor  = UIColor(red: 0/255, green: 31/255, blue: 91/255, alpha: 1)
-                obNextBtn.setTitleColor(UIColor(red: 219/255, green: 248/255, blue: 255/255, alpha: 1), for: .normal)
-                
+                obNextBtn.setTitle("Ready!", for: .normal)
+                obNextBtn.layer.borderColor = UIColor.white.cgColor
+                obNextBtn.layer.borderWidth = 1
+                obNextBtn.layer.cornerRadius = 4
                 obSkipBtn.isHidden = false
                 obSkipBtn.setTitle("⏎", for: .normal)
                 
             } else {
                 obNextBtn.isHidden = true
-                obNextBtn.setTitle("Next", for: .normal)
-                obNextBtn.backgroundColor = UIColor(red: 219/255, green: 248/255, blue: 255/255, alpha: 0)
-                obNextBtn.setTitleColor(UIColor(red: 0/255, green: 31/255, blue: 91/255, alpha: 1), for: .normal)
-                
                 obSkipBtn.isHidden = true
                 obSkipBtn.setTitle("none", for: .normal)
             }
@@ -55,9 +48,9 @@ class OnboardingViewController: UIViewController {
         obCollectionView.delegate = self
         obCollectionView.dataSource = self
         
-        let page1 = SlideModel(header: "Let's make your game better!", description: "", image: "heart_32")
-        let page2 = SlideModel(header: "Find the best game for you!", description: "You can choose the game you like", image: "heart_32")
-        let page3 = SlideModel(header: "Start playing today!", description: "", image: "home_32")
+        let page1 = SlideModel(header: "LEVEL UP YOUR GAMING EXPERIENCE!", description: "Search Over 100000+ Games", image: "Page_1")
+        let page2 = SlideModel(header: "FIND THE BEST GAME FOR YOU!", description: "Find Your Next Favourite Game", image: "Page_2")
+        let page3 = SlideModel(header: "NEVER FORGET WHAT TO PLAY!", description: "Check Your Favourites Anytime", image: "Page_3")
         //let page4 = SlideModel(header: "We Go Everywhere!", description: "65000+ Routes \n & \n Over 2300 Operators Worldwide", image: "thumbs-up_32")
         slides = [page1, page2, page3]
         
@@ -70,6 +63,7 @@ class OnboardingViewController: UIViewController {
             
             if self.currentPage == self.slides.count-1 {
                 timer.invalidate()
+                self.obCollectionView.isUserInteractionEnabled = true
             }
         }
     }
