@@ -52,27 +52,24 @@ class GameListViewController: UIViewController {
             print("BOTTOM:\(bottomList)")
         }
     }
+    static var tempGameList = [GameInfoModel]()
+   
     var nextPage:String = ""
+    static var tempNextPage:String = ""
     
     var topList = [GameInfoModel]()
     var bottomList = [GameInfoModel]()
     
-    let gameListRequest = GameListRequest(link: "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1")
-    
     var filteredGames = [GameInfoModel]()
     var isFiltering: Bool = false
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gameListRequest.getGames { result in
-            do {
-                self.gameList = try result.get().results!
-                self.nextPage = try result.get().next!
-            }catch let error {
-                print(error)
-            }
-        }
+        self.gameList = GameListViewController.tempGameList
+        self.nextPage = GameListViewController.tempNextPage
         
         tabbarConfig()
         
@@ -214,9 +211,16 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
 extension GameListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText.count >= 3){
+            
             filteredGames = bottomList.filter({ (gameInfo:GameInfoModel) -> Bool in
                 return gameInfo.name!.lowercased().contains(searchText.lowercased())
             })
+            
+            let filteredGamesTop = topList.filter({ (gameInfo:GameInfoModel) -> Bool in
+                return gameInfo.name!.lowercased().contains(searchText.lowercased())
+            })
+            
+            filteredGames += filteredGamesTop
             
             (filteredGames.count == 0) ? (bottomCollectionView.backgroundView?.isHidden = false) : (bottomCollectionView.backgroundView?.isHidden = true)
             

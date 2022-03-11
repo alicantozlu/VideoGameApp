@@ -25,11 +25,6 @@
                                     <constraint firstAttribute="height" constant="205" id="QND-Oj-9EO"/>
                                     <constraint firstAttribute="width" constant="392" id="doj-d2-NnB"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWV-O2-ocq">
                                 <rect key="frame" x="103.5" y="181" width="213.5" height="24"/>
@@ -47,6 +42,11 @@
                             <constraint firstItem="sXb-p2-KMb" firstAttribute="centerX" secondItem="oYx-Fd-RvP" secondAttribute="centerX" id="fEn-pO-5cR"/>
                             <constraint firstAttribute="width" constant="420" id="t8e-Kl-OVL"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>

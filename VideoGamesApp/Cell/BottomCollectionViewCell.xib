@@ -35,14 +35,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="385" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adM-Wk-QWT">
-                                        <rect key="frame" x="86" y="163" width="213.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="adM-Wk-QWT">
+                                        <rect key="frame" x="4" y="163" width="377" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="377" id="eLZ-e3-fyq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GUi-Ip-Fwq">
-                                        <rect key="frame" x="5" y="37" width="20" height="100"/>
+                                        <rect key="frame" x="7" y="37" width="20" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxd-Rc-S0K">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -118,7 +121,7 @@
                                     <constraint firstAttribute="bottom" secondItem="fEE-yD-XgU" secondAttribute="bottom" constant="37.5" id="IYK-Tv-U42"/>
                                     <constraint firstItem="adM-Wk-QWT" firstAttribute="centerX" secondItem="EMD-eh-1wR" secondAttribute="centerX" id="a2p-6G-xNF"/>
                                     <constraint firstItem="GUi-Ip-Fwq" firstAttribute="top" secondItem="EMD-eh-1wR" secondAttribute="top" constant="37" id="dOb-O8-juN"/>
-                                    <constraint firstItem="GUi-Ip-Fwq" firstAttribute="leading" secondItem="EMD-eh-1wR" secondAttribute="leading" constant="5" id="gpA-US-Epg"/>
+                                    <constraint firstItem="GUi-Ip-Fwq" firstAttribute="leading" secondItem="EMD-eh-1wR" secondAttribute="leading" constant="7" id="gpA-US-Epg"/>
                                     <constraint firstAttribute="trailing" secondItem="fEE-yD-XgU" secondAttribute="trailing" constant="3" id="iyt-Il-oQb"/>
                                     <constraint firstAttribute="bottom" secondItem="adM-Wk-QWT" secondAttribute="bottom" constant="-1" id="vCa-dn-dJY"/>
                                 </constraints>
