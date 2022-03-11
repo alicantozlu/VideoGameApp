@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */; };
 		C60A2A1827D435A50093F194 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */; };
-		C6532D7827D9B00C00B2708A /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6532D7727D9B00C00B2708A /* UILabel+Ex.swift */; };
 		C65621B327D6C8D70002264A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65621B227D6C8D70002264A /* EmptyView.xib */; };
 		C65621B527D6C9860002264A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65621B427D6C9860002264A /* EmptyView.swift */; };
 		C66E099527D3D81800D3BDB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E099427D3D81800D3BDB2 /* AppDelegate.swift */; };
@@ -26,6 +25,8 @@
 		C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */; };
 		C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */; };
 		C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A392BD27D812E7007BC017 /* ImageConfigure.swift */; };
+		C6B49D7227DAC0530014B9A8 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B49D7127DAC0530014B9A8 /* String+Ex.swift */; };
+		C6B49D7627DAEF790014B9A8 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B49D7527DAEF790014B9A8 /* UIView+Ex.swift */; };
 		C6DF66D427D4EA9E00ED2C35 /* BottomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D227D4EA9E00ED2C35 /* BottomCollectionViewCell.swift */; };
 		C6DF66D527D4EA9E00ED2C35 /* BottomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */; };
 		C6DF66D727D4EB7F00ED2C35 /* GameListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */; };
@@ -40,7 +41,6 @@
 /* Begin PBXFileReference section */
 		C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
-		C6532D7727D9B00C00B2708A /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		C65621B227D6C8D70002264A /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		C65621B427D6C9860002264A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		C66E099127D3D81800D3BDB2 /* VideoGamesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoGamesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +59,8 @@
 		C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		C6A392BD27D812E7007BC017 /* ImageConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigure.swift; sourceTree = "<group>"; };
+		C6B49D7127DAC0530014B9A8 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		C6B49D7527DAEF790014B9A8 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		C6DF66D227D4EA9E00ED2C35 /* BottomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6DF66D327D4EA9E00ED2C35 /* BottomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCollectionViewCell.xib; sourceTree = "<group>"; };
 		C6DF66D627D4EB7F00ED2C35 /* GameListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListModel.swift; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				C6DF66DF27D50D0D00ED2C35 /* UIImageView+Ex.swift */,
-				C6532D7727D9B00C00B2708A /* UILabel+Ex.swift */,
+				C6B49D7127DAC0530014B9A8 /* String+Ex.swift */,
+				C6B49D7527DAEF790014B9A8 /* UIView+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C66E099527D3D81800D3BDB2 /* AppDelegate.swift in Sources */,
 				C6DF66E627D5BDF600ED2C35 /* GameScreenCollectionViewCell.swift in Sources */,
 				C6DF66D427D4EA9E00ED2C35 /* BottomCollectionViewCell.swift in Sources */,
+				C6B49D7627DAEF790014B9A8 /* UIView+Ex.swift in Sources */,
 				C6DF66E427D57EE900ED2C35 /* OnboardingCollectionViewCell.swift in Sources */,
 				C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */,
 				C6DF66D927D4EC2B00ED2C35 /* GameDataModel.swift in Sources */,
@@ -262,11 +266,11 @@
 				C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */,
 				C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */,
 				C6DF66EF27D5D2A400ED2C35 /* SlideModel.swift in Sources */,
+				C6B49D7227DAC0530014B9A8 /* String+Ex.swift in Sources */,
 				C66E099F27D3D81800D3BDB2 /* VideoGamesApp.xcdatamodeld in Sources */,
 				C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */,
 				C65621B527D6C9860002264A /* EmptyView.swift in Sources */,
 				C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */,
-				C6532D7827D9B00C00B2708A /* UILabel+Ex.swift in Sources */,
 				C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */,
 				C66E09AF27D3D88A00D3BDB2 /* OnboardingViewController.swift in Sources */,
 			);

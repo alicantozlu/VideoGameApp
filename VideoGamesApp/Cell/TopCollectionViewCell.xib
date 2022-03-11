@@ -19,25 +19,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Fd-RvP">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KTl-0d-hLQ" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="EHO-9X-xCn"/>
-                                    <constraint firstAttribute="width" constant="420" id="by3-Rc-RxO"/>
-                                </constraints>
-                            </imageView>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXe-Hk-OMd">
-                                <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wJ1-Wf-gDq">
-                                    <rect key="frame" x="0.0" y="0.0" width="420" height="220"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="401-lM-kAy"/>
-                                    <constraint firstAttribute="width" constant="420" id="baV-H1-4wb"/>
-                                </constraints>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-p2-KMb" customClass="ImageConfigure" customModule="VideoGamesApp" customModuleProvider="target">
                                 <rect key="frame" x="14" y="7.5" width="392" height="205"/>
                                 <constraints>
@@ -48,35 +29,23 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Name Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWV-O2-ocq">
+                                <rect key="frame" x="103.5" y="181" width="213.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KTl-0d-hLQ" firstAttribute="leading" secondItem="oYx-Fd-RvP" secondAttribute="leading" id="3fF-pd-wyF"/>
-                            <constraint firstAttribute="bottom" secondItem="KTl-0d-hLQ" secondAttribute="bottom" id="FIb-lM-iak"/>
                             <constraint firstAttribute="height" constant="220" id="Gy9-sr-cMj"/>
-                            <constraint firstAttribute="trailing" secondItem="KTl-0d-hLQ" secondAttribute="trailing" id="JH8-SM-kvE"/>
+                            <constraint firstAttribute="bottom" secondItem="lWV-O2-ocq" secondAttribute="bottom" constant="15" id="P6e-lI-qG9"/>
                             <constraint firstItem="sXb-p2-KMb" firstAttribute="centerY" secondItem="oYx-Fd-RvP" secondAttribute="centerY" id="Ryj-hV-6zm"/>
-                            <constraint firstItem="QXe-Hk-OMd" firstAttribute="leading" secondItem="oYx-Fd-RvP" secondAttribute="leading" id="T4K-uu-sBs"/>
-                            <constraint firstAttribute="bottom" secondItem="QXe-Hk-OMd" secondAttribute="bottom" id="cez-aH-sI8"/>
+                            <constraint firstItem="lWV-O2-ocq" firstAttribute="centerX" secondItem="oYx-Fd-RvP" secondAttribute="centerX" id="SPM-yd-EAz"/>
                             <constraint firstItem="sXb-p2-KMb" firstAttribute="centerX" secondItem="oYx-Fd-RvP" secondAttribute="centerX" id="fEn-pO-5cR"/>
-                            <constraint firstAttribute="trailing" secondItem="QXe-Hk-OMd" secondAttribute="trailing" id="pC4-Mp-8Pg"/>
-                            <constraint firstItem="KTl-0d-hLQ" firstAttribute="top" secondItem="oYx-Fd-RvP" secondAttribute="top" id="qtF-fz-UWH"/>
                             <constraint firstAttribute="width" constant="420" id="t8e-Kl-OVL"/>
-                            <constraint firstItem="QXe-Hk-OMd" firstAttribute="top" secondItem="oYx-Fd-RvP" secondAttribute="top" id="xiL-cw-OXF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -91,7 +60,7 @@
             <size key="customSize" width="420" height="231"/>
             <connections>
                 <outlet property="gameImageView" destination="sXb-p2-KMb" id="8aQ-wo-ymR"/>
-                <outlet property="innerImageView" destination="KTl-0d-hLQ" id="0IL-rF-IHT"/>
+                <outlet property="gameNameLbl" destination="lWV-O2-ocq" id="6Xs-Oc-NVN"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="114.50892857142857"/>
         </collectionViewCell>

@@ -14,7 +14,6 @@ class UserLongInViewController: UIViewController {
     @IBOutlet var logInBtn: UIButton!
     @IBOutlet var registerBtn: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,5 +42,3 @@ class UserLongInViewController: UIViewController {
         present(tabBarVC, animated: true, completion: nil)
     }
 }
-
-

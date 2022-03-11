@@ -5,7 +5,6 @@
 //  Created by Ali Can Tozlu on 9.03.2022.
 //
 
-import Foundation
 import UIKit
 
 let imageCache = NSCache<AnyObject, AnyObject>()
@@ -18,8 +17,7 @@ class ImageConfigure: UIImageView {
         guard let url = URL(string: urlString) else {
             fatalError("Error")
         }
-        
-        
+
         image = nil
         addSpinner()
         
