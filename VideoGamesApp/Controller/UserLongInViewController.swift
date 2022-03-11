@@ -14,10 +14,18 @@ class UserLongInViewController: UIViewController {
     @IBOutlet var logInBtn: UIButton!
     @IBOutlet var registerBtn: UIButton!
     
+    let gameListRequest = GameListRequest(link: "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gameListRequest.getGames { result in
+            do {
+                GameListViewController.tempGameList = try result.get().results!
+                GameListViewController.tempNextPage = try result.get().next!
+            }catch let error {
+                print(error)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,11 +45,12 @@ class UserLongInViewController: UIViewController {
     }
     
     @IBAction func logInBtnTapped(_ sender: Any) {
+        
+        
+        
         let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarIdentity") as! UITabBarController
         tabBarVC.modalTransitionStyle = .flipHorizontal
         tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true, completion: nil)
     }
 }
-
-

@@ -30,7 +30,7 @@ class GameScreenViewController: UIViewController {
     static var genre = [Genres]()
     
     static var currentGame = [GameInfoModel]()
-
+    
     var currentPage = 0{
         didSet{
             gameScreenPageController.currentPage = currentPage
@@ -41,8 +41,8 @@ class GameScreenViewController: UIViewController {
         super.viewDidLoad()
         gameDescriptionLbl.text = GameScreenViewController.descriptionText
         innerImageView.image = GameScreenViewController.backgroundImage.image
-        gameNameLbl.clearName(str: GameScreenViewController.gameName)
-        gameReleaseDate.changeDateFormat(str: GameScreenViewController.releaseDate)
+        gameNameLbl.text!.clearName(str: GameScreenViewController.gameName)
+        gameReleaseDate.text!.changeDateFormat(str: GameScreenViewController.releaseDate)
         metaValLbl.text = GameScreenViewController.metaVal
         genreLbl.text = configureGenre(gen: GameScreenViewController.genre)
         
@@ -54,8 +54,6 @@ class GameScreenViewController: UIViewController {
         } else{
             likeBtn.setImage(UIImage(named: "heart"), for: .normal)
         }
-        
-        
         
         func configureGenre(gen: [Genres]) -> (String){
             var text = ""
@@ -80,7 +78,8 @@ class GameScreenViewController: UIViewController {
             LikedGamesViewController.likedGames.append(GameScreenViewController.currentGame[0])
             likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
         } else if (likeBtn.currentImage == UIImage(named: "heart_filled")){
-            LikedGamesViewController.likedGames.removeLast()
+            let tempArray = LikedGamesViewController.likedGames.filter{ $0 != GameScreenViewController.currentGame[0]}
+            LikedGamesViewController.likedGames = tempArray
             likeBtn.setImage(UIImage(named: "heart"), for: .normal)
         }
     }

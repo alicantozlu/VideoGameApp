@@ -52,30 +52,24 @@ class GameListViewController: UIViewController {
             print("BOTTOM:\(bottomList)")
         }
     }
+    static var tempGameList = [GameInfoModel]()
+   
     var nextPage:String = ""
+    static var tempNextPage:String = ""
     
     var topList = [GameInfoModel]()
     var bottomList = [GameInfoModel]()
     
-    let gameListRequest = GameListRequest(link: "https://api.rawg.io/api/games?key=58d924b9ce4441f48c690d746949c01c&page=1")
-    
     var filteredGames = [GameInfoModel]()
     var isFiltering: Bool = false
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gameListRequest.getGames { result in
-            do {
-                self.gameList = try result.get().results!
-                self.nextPage = try result.get().next!
-            }catch let error {
-                print(error)
-            }
-        }
-        
-        topCollectionView.tag = 1
-        bottomCollectionView.tag = 2
+        self.gameList = GameListViewController.tempGameList
+        self.nextPage = GameListViewController.tempNextPage
         
         tabbarConfig()
         
@@ -91,23 +85,7 @@ class GameListViewController: UIViewController {
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
         bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
     }
-    
-    var whichCollectionViewScrolled = "" {
-        willSet{
-            print(newValue)
-        }
-    }
-    var isFirstCollectionViewScrolled = false {
-        willSet{
-            print("First CollectionView Scrolled : \(newValue)")
-        }
-    }
-    var isSecondCollectionViewScrolled = false {
-        willSet{
-            print("Second CollectionView Scrolled : \(newValue)")
-        }
-    }
-    
+
     // TabBar Ozellestirmeleri
     private func tabbarConfig() {
         let tabBar = UITabBar.appearance()
@@ -133,38 +111,24 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        func choose(arr: Array<GameInfoModel>){
+            GameScreenViewController.gameInfo = arr[indexPath.row].short_screenshots!
+            GameScreenViewController.backgroundImage.loadFrom(URLAddress: arr[indexPath.row].background_image!)
+            GameScreenViewController.currentGame.append(arr[indexPath.row])
+            GameScreenViewController.gameName.clearName(str: arr[indexPath.row].name!)
+            GameScreenViewController.releaseDate = arr[indexPath.row].released!
+            GameScreenViewController.metaVal = String(arr[indexPath.row].metacritic!)
+            GameScreenViewController.genre = arr[indexPath.row].genres!
+            gameDetailRequest = GameListRequest(slug: arr[indexPath.row].slug!)
+        }
         var gameDetailRequest = GameListRequest(slug: "")
         if(isFiltering){
-            GameScreenViewController.gameInfo = filteredGames[indexPath.row].short_screenshots!
-            GameScreenViewController.backgroundImage.loadFrom(URLAddress: filteredGames[indexPath.row].background_image!)
-            GameScreenViewController.currentGame.append(filteredGames[indexPath.row])
-            GameScreenViewController.gameName = filteredGames[indexPath.row].name!
-            GameScreenViewController.releaseDate = filteredGames[indexPath.row].released!
-            GameScreenViewController.metaVal = String(filteredGames[indexPath.row].metacritic!)
-            GameScreenViewController.genre = filteredGames[indexPath.row].genres!
-            
-            gameDetailRequest = GameListRequest(slug: filteredGames[indexPath.row].slug!)
+            choose(arr: filteredGames)
         }else{
             if(collectionView == topCollectionView){
-                GameScreenViewController.gameInfo = topList[indexPath.row].short_screenshots!
-                GameScreenViewController.backgroundImage.loadFrom(URLAddress: topList[indexPath.row].background_image!)
-                GameScreenViewController.currentGame.append(topList[indexPath.row])
-                GameScreenViewController.gameName = topList[indexPath.row].name!
-                GameScreenViewController.releaseDate = topList[indexPath.row].released!
-                GameScreenViewController.metaVal = String(topList[indexPath.row].metacritic!)
-                GameScreenViewController.genre = topList[indexPath.row].genres!
-                
-                gameDetailRequest = GameListRequest(slug: topList[indexPath.row].slug!)
+                choose(arr: topList)
             }else{
-                GameScreenViewController.gameInfo = bottomList[indexPath.row].short_screenshots!
-                GameScreenViewController.backgroundImage.loadFrom(URLAddress: bottomList[indexPath.row].background_image!)
-                GameScreenViewController.currentGame.append(bottomList[indexPath.row])
-                GameScreenViewController.gameName = bottomList[indexPath.row].name!
-                GameScreenViewController.releaseDate = bottomList[indexPath.row].released!
-                GameScreenViewController.metaVal = String(bottomList[indexPath.row].metacritic!)
-                GameScreenViewController.genre = bottomList[indexPath.row].genres!
-                
-                gameDetailRequest = GameListRequest(slug: bottomList[indexPath.row].slug!)
+                choose(arr: bottomList)
             }
         }
         
@@ -209,9 +173,6 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCellIdentity", for: indexPath) as! BottomCollectionViewCell
-            print("BOTTOMLIST.COUNT -> \(bottomList.count)")
-            print("INDEXPATH -> \(indexPath.row)")
-            print("--------------------------------")
             if isFiltering {
                 cell.configure(model: filteredGames[indexPath.row])
             } else {
@@ -240,24 +201,9 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     
     //Pagecontroller Hareketi
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        if let collectionView = scrollView as? UICollectionView {
-            switch collectionView.tag {
-            case 1:
-                whichCollectionViewScrolled = "First"
-                isFirstCollectionViewScrolled = true
-                isSecondCollectionViewScrolled = false
-                let width = scrollView.frame.width
-                currentPage = Int(scrollView.contentOffset.x / width)
-            case 2:
-                whichCollectionViewScrolled = "second"
-                isFirstCollectionViewScrolled = false
-                isSecondCollectionViewScrolled = true
-            default:
-                whichCollectionViewScrolled = "unknown"
-            }
-        } else{
-            print("cant cast")
+        if scrollView == topCollectionView{
+            let width = scrollView.frame.width
+            currentPage = Int(scrollView.contentOffset.x / width)
         }
     }
 }
@@ -265,9 +211,16 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
 extension GameListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText.count >= 3){
+            
             filteredGames = bottomList.filter({ (gameInfo:GameInfoModel) -> Bool in
                 return gameInfo.name!.lowercased().contains(searchText.lowercased())
             })
+            
+            let filteredGamesTop = topList.filter({ (gameInfo:GameInfoModel) -> Bool in
+                return gameInfo.name!.lowercased().contains(searchText.lowercased())
+            })
+            
+            filteredGames += filteredGamesTop
             
             (filteredGames.count == 0) ? (bottomCollectionView.backgroundView?.isHidden = false) : (bottomCollectionView.backgroundView?.isHidden = true)
             
