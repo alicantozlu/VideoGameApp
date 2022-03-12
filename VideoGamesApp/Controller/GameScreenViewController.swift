@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameScreenViewController: UIViewController {
+class GameScreenViewController: UIViewController{
     
     @IBOutlet var innerImageView: UIImageView!
     @IBOutlet var gameScreenCollectionView: UICollectionView!
@@ -30,6 +30,14 @@ class GameScreenViewController: UIViewController {
     static var genre = [Genres]()
     
     static var currentGame = [GameInfoModel]()
+    
+    var check:Bool = false{
+        didSet{
+            let tempArray = LikedGamesViewController.likedGames.filter{ $0 != GameScreenViewController.currentGame[0]}
+            LikedGamesViewController.likedGames = tempArray
+            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
+        }
+    }
     
     var currentPage = 0{
         didSet{
@@ -65,6 +73,14 @@ class GameScreenViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     @IBAction func goBackBtnTapped(_ sender: Any) {
         dismiss(animated: true,completion: nil)
         if(!GameScreenViewController.currentGame.isEmpty){
@@ -78,9 +94,15 @@ class GameScreenViewController: UIViewController {
             LikedGamesViewController.likedGames.append(GameScreenViewController.currentGame[0])
             likeBtn.setImage(UIImage(named: "heart_filled"), for: .normal)
         } else if (likeBtn.currentImage == UIImage(named: "heart_filled")){
-            let tempArray = LikedGamesViewController.likedGames.filter{ $0 != GameScreenViewController.currentGame[0]}
-            LikedGamesViewController.likedGames = tempArray
-            likeBtn.setImage(UIImage(named: "heart"), for: .normal)
+
+            let alertVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertIdentity") as! AlertViewController
+            alertVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            alertVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            
+            alertVC.textMessage = "Remove game from favourite games?"
+            self.present(alertVC, animated: true, completion: nil)
+        
+            alertVC.delegate = self
         }
     }
 }
@@ -103,7 +125,13 @@ extension GameScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension Array {
-     func containS<T>(obj: T) -> Bool where T: Equatable {
-         return !self.filter({$0 as? T == obj}).isEmpty
-     }
- }
+    func containS<T>(obj: T) -> Bool where T: Equatable {
+        return !self.filter({$0 as? T == obj}).isEmpty
+    }
+}
+
+extension GameScreenViewController: MessageDelegate {
+    func sendMessage(check: Bool) {
+        self.check = check
+    }
+}

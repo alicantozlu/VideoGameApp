@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyView" customModule="VideoGamesApp" customModuleProvider="target">
             <connections>
-                <outlet property="notFoundImage" destination="4bV-fP-Yqm" id="lAW-jR-5La"/>
+                <outlet property="centerImage" destination="a40-mT-UAZ" id="CZH-cN-bJz"/>
                 <outlet property="textLbl" destination="I53-c4-Byj" id="s96-it-ZWs"/>
             </connections>
         </placeholder>
@@ -18,38 +18,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-fP-Yqm">
-                    <rect key="frame" x="0.0" y="452" width="414" height="278"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="414" id="CdE-qO-dHT"/>
-                        <constraint firstAttribute="height" constant="278" id="GRq-jU-QYn"/>
-                    </constraints>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="among2" translatesAutoresizingMaskIntoConstraints="NO" id="pJw-pv-d8B">
+                    <rect key="frame" x="-23" y="337" width="251" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTHING TO SEE HERE!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I53-c4-Byj">
-                    <rect key="frame" x="36.5" y="352" width="341.5" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="BEP-bY-Pn5"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME NOT FOUND" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I53-c4-Byj">
+                    <rect key="frame" x="41" y="198" width="341.5" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="34"/>
                     <color key="textColor" red="0.4681426883" green="0.081040732559999995" blue="0.069996960459999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="1" height="0.0"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="among1R" translatesAutoresizingMaskIntoConstraints="NO" id="a40-mT-UAZ">
+                    <rect key="frame" x="176" y="389" width="106" height="84"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="among4R" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-Y3-Vnz">
+                    <rect key="frame" x="266" y="362" width="170" height="94"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="among5" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-Si-epO">
+                    <rect key="frame" x="-23" y="374" width="176" height="114"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3G5-uP-ESU"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4bV-fP-Yqm" secondAttribute="bottom" constant="132" id="IJH-ak-Qbf"/>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WzQ-ki-7xW"/>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="top" secondItem="I53-c4-Byj" secondAttribute="bottom" id="fIf-ID-zLU"/>
-                <constraint firstItem="I53-c4-Byj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kTU-pL-yxU"/>
-                <constraint firstItem="4bV-fP-Yqm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kkR-fI-4YQ"/>
-            </constraints>
-            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+            <point key="canvasLocation" x="134.78260869565219" y="133.92857142857142"/>
         </view>
     </objects>
     <resources>
-        <image name="notFound" width="1350" height="571"/>
+        <image name="among1R" width="1280" height="882"/>
+        <image name="among2" width="1192" height="1280"/>
+        <image name="among4R" width="1134" height="1280"/>
+        <image name="among5" width="1030" height="1280"/>
     </resources>
 </document>

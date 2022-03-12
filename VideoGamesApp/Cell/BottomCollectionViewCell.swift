@@ -21,7 +21,7 @@ class BottomCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        gameImageView.addShadow(to: [.bottom, .left, .right], radius: 60, opacity: 1, color: UIColor.black.cgColor)
+        gameImageView.addShadow(to: [.bottom, .left, .right], radius: 60, opacity: 0.7, color: UIColor.black.cgColor)
 
         shadowMaker(UIView: gameImageView)
         func shadowMaker(UIView: UIView){            

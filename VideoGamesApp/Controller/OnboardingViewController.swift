@@ -68,6 +68,14 @@ class OnboardingViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     @IBAction func nextBtnAction(_ sender: Any) {
         if(currentPage == slides.count-1){
             // navigate to the next page
