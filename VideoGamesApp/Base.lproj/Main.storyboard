@@ -150,7 +150,7 @@
         <!--User Long In View Controller-->
         <scene sceneID="x2F-1f-hcA">
             <objects>
-                <viewController id="4mK-X9-yot" customClass="UserLongInViewController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInIdentity" id="4mK-X9-yot" customClass="UserLongInViewController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXN-K9-q69">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-EO-DhZ">
                                         <rect key="frame" x="0.0" y="44" width="364" height="34"/>
@@ -198,11 +198,10 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="LOG IN">
+                                                <fragment content="Sign in">
                                                     <attributes>
-                                                        <color key="NSColor" red="0.74826270340000001" green="0.77705603840000004" blue="0.75218999389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="14" name="Thonburi-Light"/>
-                                                        <font key="NSOriginalFont" size="14" name="Thonburi-Light"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -282,7 +281,6 @@
         <!--Alert View Controller-->
         <scene sceneID="3ZI-EU-3Pv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tPG-yd-7QQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="alertIdentity" id="tHQ-bk-Ejg" customClass="AlertViewController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghl-4F-1vz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -401,8 +399,87 @@
                         <outlet property="yesButton" destination="UGc-fk-dMT" id="ICT-Xe-qQC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPG-yd-7QQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4096" y="-502"/>
+        </scene>
+        <!--Input Alert View Controller-->
+        <scene sceneID="T5r-F9-YpA">
+            <objects>
+                <viewController storyboardIdentifier="inputAlertIdentity" id="4k3-Ox-TkT" customClass="InputAlertViewController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dM-Di-GlV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s88-Mf-xOG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kc4-VJ-PSS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YhW-Tw-lP8">
+                                            <rect key="frame" x="95" y="378" width="224" height="141"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goT-Aw-NZA">
+                                                    <rect key="frame" x="0.0" y="96" width="224" height="40"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="TkA-oj-kJs"/>
+                                                        <constraint firstAttribute="width" constant="224" id="xRu-cD-NRX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Okay">
+                                                        <color key="titleColor" red="0.85938316579999996" green="0.97257417440000005" blue="0.99807196860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="alertBtnAction:" destination="4k3-Ox-TkT" eventType="touchUpInside" id="jFy-Rr-2bu"/>
+                                                        <action selector="yesBtnAction:" destination="tHQ-bk-Ejg" eventType="touchUpInside" id="exQ-hi-V2b"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq6-qt-hsa">
+                                                    <rect key="frame" x="0.0" y="8" width="224" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="goT-Aw-NZA" firstAttribute="leading" secondItem="YhW-Tw-lP8" secondAttribute="leading" id="7jr-wc-fVC"/>
+                                                <constraint firstAttribute="bottom" secondItem="goT-Aw-NZA" secondAttribute="bottom" constant="5" id="B0b-Ka-JnO"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="systemUltraThinMaterialLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sMX-vP-bC6"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s88-Mf-xOG" firstAttribute="leading" secondItem="sMX-vP-bC6" secondAttribute="leading" id="9dM-Uc-Lrg"/>
+                            <constraint firstItem="sMX-vP-bC6" firstAttribute="bottom" secondItem="s88-Mf-xOG" secondAttribute="bottom" constant="-34" id="KlN-9s-j15"/>
+                            <constraint firstItem="sMX-vP-bC6" firstAttribute="trailing" secondItem="s88-Mf-xOG" secondAttribute="trailing" id="sR9-sK-S5m"/>
+                            <constraint firstItem="s88-Mf-xOG" firstAttribute="top" secondItem="sMX-vP-bC6" secondAttribute="top" constant="-44" id="zRI-CD-Cva"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBtn" destination="goT-Aw-NZA" id="JIF-14-K4a"/>
+                        <outlet property="alertContainer" destination="YhW-Tw-lP8" id="7zF-YA-yCi"/>
+                        <outlet property="alertTextLbl" destination="Uq6-qt-hsa" id="J5o-uH-ooz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbI-Bg-332" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744.92753623188412" y="808.92857142857144"/>
         </scene>
         <!--Liked Games View Controller-->
         <scene sceneID="NkD-0f-d1D">
@@ -468,10 +545,10 @@
             </objects>
             <point key="canvasLocation" x="2506" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--User Profile View Controller-->
         <scene sceneID="Sgv-qg-t2m">
             <objects>
-                <viewController id="a4L-fb-9ce" sceneMemberID="viewController">
+                <viewController id="a4L-fb-9ce" customClass="UserProfileViewController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Crs-Rc-OhL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,8 +585,93 @@
                                         <rect key="frame" x="43" y="668" width="168" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amongP" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-Vx-1Oj">
+                                        <rect key="frame" x="112" y="87" width="191" height="187"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="187" id="YC5-yp-37M"/>
+                                            <constraint firstAttribute="width" constant="191" id="n6m-Di-h7T"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-i7-I8O">
+                                        <rect key="frame" x="162.5" y="301" width="89" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Games  :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-9Y-HcE">
+                                        <rect key="frame" x="58" y="419" width="155" height="23"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Joined  :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf5-EG-aDM">
+                                        <rect key="frame" x="100" y="386" width="112" height="23"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Joined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s98-7e-fdV">
+                                        <rect key="frame" x="223" y="386" width="96" height="23"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-2I-K8w">
+                                        <rect key="frame" x="35" y="599" width="364" height="32.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Sign out">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Thonburi-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logInBtnTapped:" destination="4mK-X9-yot" eventType="touchUpInside" id="Epr-RG-1OY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-gq-8Is">
+                                        <rect key="frame" x="224" y="419" width="11.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gf5-EG-aDM" firstAttribute="top" secondItem="zSb-i7-I8O" secondAttribute="bottom" constant="62.5" id="1Ph-IW-18h"/>
+                                    <constraint firstItem="o7p-Vx-1Oj" firstAttribute="top" secondItem="0L6-au-yNr" secondAttribute="top" constant="87" id="Q86-tX-97w"/>
+                                    <constraint firstItem="Yqb-9Y-HcE" firstAttribute="leading" secondItem="0L6-au-yNr" secondAttribute="leading" constant="58" id="RKf-B7-RMn"/>
+                                    <constraint firstItem="WU6-gq-8Is" firstAttribute="leading" secondItem="Yqb-9Y-HcE" secondAttribute="trailing" constant="11" id="Ueb-rm-696"/>
+                                    <constraint firstItem="s98-7e-fdV" firstAttribute="top" secondItem="zSb-i7-I8O" secondAttribute="bottom" constant="62.5" id="Xml-3I-J4I"/>
+                                    <constraint firstItem="zSb-i7-I8O" firstAttribute="top" secondItem="o7p-Vx-1Oj" secondAttribute="bottom" constant="27" id="YMD-Dp-O77"/>
+                                    <constraint firstItem="s98-7e-fdV" firstAttribute="leading" secondItem="Gf5-EG-aDM" secondAttribute="trailing" constant="11" id="ZaT-ZM-OwE"/>
+                                    <constraint firstItem="WU6-gq-8Is" firstAttribute="top" secondItem="s98-7e-fdV" secondAttribute="bottom" constant="10" id="dEY-WY-G4j"/>
+                                    <constraint firstItem="Yqb-9Y-HcE" firstAttribute="top" secondItem="Gf5-EG-aDM" secondAttribute="bottom" constant="10" id="kib-cO-xuE"/>
+                                    <constraint firstItem="Gf5-EG-aDM" firstAttribute="leading" secondItem="0L6-au-yNr" secondAttribute="leading" constant="100" id="q0z-aX-G10"/>
+                                    <constraint firstItem="o7p-Vx-1Oj" firstAttribute="leading" secondItem="0L6-au-yNr" secondAttribute="leading" constant="112" id="wfq-vX-UYK"/>
+                                    <constraint firstItem="zSb-i7-I8O" firstAttribute="centerX" secondItem="0L6-au-yNr" secondAttribute="centerX" id="xj4-9i-mmi"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Zh-DC-cio"/>
@@ -522,6 +684,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="user_32" selectedImage="user_32" id="DeQ-Wn-42J"/>
+                    <connections>
+                        <outlet property="favouriteGameLbl" destination="WU6-gq-8Is" id="421-gV-o2s"/>
+                        <outlet property="logOutBtn" destination="xJc-2I-K8w" id="ZlL-ZI-nyb"/>
+                        <outlet property="userJoinedLbl" destination="s98-7e-fdV" id="mYM-AU-vuD"/>
+                        <outlet property="userNameLbl" destination="zSb-i7-I8O" id="7ak-9W-ma3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gc1-Z8-Lme" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -832,7 +1000,7 @@
                                                 <action selector="goBackBtnTapped:" destination="Ea6-mw-Lji" eventType="touchUpInside" id="zJY-SL-q2W"/>
                                             </connections>
                                         </button>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-kn-mTi">
+                                        <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-kn-mTi">
                                             <rect key="frame" x="25" y="355" width="369" height="109"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="YTS-Ui-DO5">
@@ -997,6 +1165,7 @@
         <image name="among6R" width="804" height="1280"/>
         <image name="among7" width="2560" height="2560"/>
         <image name="among9" width="1188" height="1280"/>
+        <image name="amongP" width="750" height="750"/>
         <image name="amongR" width="1280" height="1038"/>
         <image name="arrowtriangle.forward.fill" catalog="system" width="128" height="113"/>
         <image name="background" width="1920" height="1080"/>

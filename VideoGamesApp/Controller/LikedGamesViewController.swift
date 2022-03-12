@@ -10,7 +10,11 @@ import UIKit
 class LikedGamesViewController: UIViewController {
     
     @IBOutlet var likedGamesCollectionView: UICollectionView!
-    static var likedGames = [GameInfoModel]()
+    static var likedGames = [GameInfoModel](){
+        didSet{
+            UserProfileViewController.gameCount = String(likedGames.count)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

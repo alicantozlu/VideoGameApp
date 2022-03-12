@@ -51,7 +51,11 @@ class GameScreenViewController: UIViewController{
         innerImageView.image = GameScreenViewController.backgroundImage.image
         gameNameLbl.text!.clearName(str: GameScreenViewController.gameName)
         gameReleaseDate.text!.changeDateFormat(str: GameScreenViewController.releaseDate)
-        metaValLbl.text = GameScreenViewController.metaVal
+        if(GameScreenViewController.metaVal == "0"){
+            metaValLbl.text = "No Data"
+        }else{
+            metaValLbl.text = GameScreenViewController.metaVal
+        }
         genreLbl.text = configureGenre(gen: GameScreenViewController.genre)
         
         gameNameLbl.text = GameScreenViewController.gameName

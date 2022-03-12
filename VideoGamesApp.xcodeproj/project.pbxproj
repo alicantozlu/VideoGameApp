@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C60A2A1727D435A50093F194 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */; };
 		C60A2A1827D435A50093F194 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */; };
+		C63EDEFD27DD1F8B00D360A1 /* InputAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EDEFC27DD1F8B00D360A1 /* InputAlertViewController.swift */; };
 		C65621B327D6C8D70002264A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65621B227D6C8D70002264A /* EmptyView.xib */; };
 		C65621B527D6C9860002264A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65621B427D6C9860002264A /* EmptyView.swift */; };
 		C664560D27DC55A500AF8F26 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664560C27DC55A500AF8F26 /* AlertViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		C60A2A1527D435A50093F194 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
+		C63EDEFC27DD1F8B00D360A1 /* InputAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAlertViewController.swift; sourceTree = "<group>"; };
 		C65621B227D6C8D70002264A /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		C65621B427D6C9860002264A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		C664560C27DC55A500AF8F26 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C65621B427D6C9860002264A /* EmptyView.swift */,
 				C65621B227D6C8D70002264A /* EmptyView.xib */,
 				C664560C27DC55A500AF8F26 /* AlertViewController.swift */,
+				C63EDEFC27DD1F8B00D360A1 /* InputAlertViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				C6B49D7627DAEF790014B9A8 /* UIView+Ex.swift in Sources */,
 				C6DF66E427D57EE900ED2C35 /* OnboardingCollectionViewCell.swift in Sources */,
 				C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */,
+				C63EDEFD27DD1F8B00D360A1 /* InputAlertViewController.swift in Sources */,
 				C6DF66D927D4EC2B00ED2C35 /* GameDataModel.swift in Sources */,
 				C66E09B527D3DB4B00D3BDB2 /* GameScreenViewController.swift in Sources */,
 				C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */,

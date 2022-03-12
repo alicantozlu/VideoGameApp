@@ -27,7 +27,7 @@ class UserLongInViewController: UIViewController {
             }
         }
         
-        textFieldConfig(field: userNameTxtFld, text: "Email")
+        textFieldConfig(field: userNameTxtFld, text: "User Name")
         textFieldConfig(field: userPasswordTxtFld, text: "Password")
 
     }
@@ -73,7 +73,30 @@ class UserLongInViewController: UIViewController {
     
     @IBAction func logInBtnTapped(_ sender: Any) {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let myAlert = storyboard.instantiateViewController(withIdentifier: "inputAlertIdentity") as! InputAlertViewController
+        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
+    if(userNameTxtFld.text == "" && userPasswordTxtFld.text == ""){
+            
+            myAlert.textMessage = "Username and Password required"
+            
+            self.present(myAlert, animated: true, completion: nil)
+            return
+    } else if(userNameTxtFld.text == "" && userPasswordTxtFld.text != ""){
+        myAlert.textMessage = "Usare Name Required"
+        
+        self.present(myAlert, animated: true, completion: nil)
+        return
+    } else if(userNameTxtFld.text != "" && userPasswordTxtFld.text == ""){
+        myAlert.textMessage = "Password Required"
+        
+        self.present(myAlert, animated: true, completion: nil)
+        return
+    }
+        
+        UserProfileViewController.nameText = userNameTxtFld.text!
         
         let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarIdentity") as! UITabBarController
         tabBarVC.modalTransitionStyle = .flipHorizontal

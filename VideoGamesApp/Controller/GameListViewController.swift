@@ -62,9 +62,7 @@ class GameListViewController: UIViewController {
     
     var filteredGames = [GameInfoModel]()
     var isFiltering: Bool = false
-    
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -128,7 +126,7 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
             GameScreenViewController.currentGame.append(arr[indexPath.row])
             GameScreenViewController.gameName.clearName(str: arr[indexPath.row].name!)
             GameScreenViewController.releaseDate = arr[indexPath.row].released!
-            GameScreenViewController.metaVal = String(arr[indexPath.row].metacritic!)
+            GameScreenViewController.metaVal = String(arr[indexPath.row].metacritic ?? 0)
             GameScreenViewController.genre = arr[indexPath.row].genres!
             gameDetailRequest = GameListRequest(slug: arr[indexPath.row].slug!)
         }
