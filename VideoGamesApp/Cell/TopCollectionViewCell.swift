@@ -15,6 +15,9 @@ class TopCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.gameImageView.layer.cornerRadius = 10
+        self.gameImageView.clipsToBounds = true
+        
         gameImageView.addShadow(to: [.bottom], radius: 50, opacity: 1, color: UIColor.black.cgColor)
         gameImageView.shadowMaker()
     }

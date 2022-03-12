@@ -10,14 +10,22 @@ import UIKit
 class EmptyView: UIView {
 
     @IBOutlet var textLbl: UILabel!
-    @IBOutlet var notFoundImage: UIImageView!
+    @IBOutlet var centerImage: UIImageView!
     
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
-        
+
         shadowMaker(UILabel: textLbl)
-        shadowMaker(UILabel: notFoundImage)
+        shadowMaker(UILabel: centerImage)
+    }
+    
+    func changeText(text:String){
+        textLbl.text = text
+    }
+    
+    func changeImage(imageName:String){
+        centerImage.image = UIImage(named: imageName)
     }
     
     func shadowMaker<T> (UILabel: T){

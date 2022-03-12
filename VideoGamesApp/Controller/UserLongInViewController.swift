@@ -8,7 +8,7 @@
 import UIKit
 
 class UserLongInViewController: UIViewController {
-
+    
     @IBOutlet var userNameTxtFld: UITextField!
     @IBOutlet var userPasswordTxtFld: UITextField!
     @IBOutlet var logInBtn: UIButton!
@@ -26,7 +26,34 @@ class UserLongInViewController: UIViewController {
                 print(error)
             }
         }
+        
+        textFieldConfig(field: userNameTxtFld, text: "Email")
+        textFieldConfig(field: userPasswordTxtFld, text: "Password")
+
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    //Textfield Config
+    func textFieldConfig(field:UITextField, text:String){
+
+        field.layer.borderColor = UIColor.lightGray.cgColor
+        field.layer.cornerRadius = 8
+        field.layer.borderWidth = 1.0
+        
+        field.attributedPlaceholder = NSAttributedString(
+            string: text,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

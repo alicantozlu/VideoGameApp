@@ -15,16 +15,22 @@ class LikedGamesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        likedGamesCollectionView.backgroundView = EmptyView()
+        let emptyView = EmptyView()
+        emptyView.changeText(text: "LIST IS EMPTY")
+        emptyView.changeImage(imageName: "among7R")
+        likedGamesCollectionView.backgroundView = emptyView
         
         likedGamesCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "likedGamesIdentifier")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //  DispatchQueue.main.async { [self] in
+        super.viewWillAppear(animated)
         self.likedGamesCollectionView.reloadData()
         LikedGamesViewController.likedGames.isEmpty ? (self.likedGamesCollectionView.backgroundView?.isHidden = false) : (self.likedGamesCollectionView.backgroundView?.isHidden = true)
-        //       }
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
 

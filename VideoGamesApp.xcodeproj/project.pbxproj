@@ -11,6 +11,7 @@
 		C60A2A1827D435A50093F194 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */; };
 		C65621B327D6C8D70002264A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65621B227D6C8D70002264A /* EmptyView.xib */; };
 		C65621B527D6C9860002264A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65621B427D6C9860002264A /* EmptyView.swift */; };
+		C664560D27DC55A500AF8F26 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664560C27DC55A500AF8F26 /* AlertViewController.swift */; };
 		C66E099527D3D81800D3BDB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E099427D3D81800D3BDB2 /* AppDelegate.swift */; };
 		C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E099627D3D81800D3BDB2 /* SceneDelegate.swift */; };
 		C66E099C27D3D81800D3BDB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66E099A27D3D81800D3BDB2 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		C66E09B327D3DB3400D3BDB2 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */; };
 		C66E09B527D3DB4B00D3BDB2 /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */; };
 		C66E09B727D3DF9E00D3BDB2 /* LikedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */; };
-		C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */; };
 		C66E09BB27D3EB1C00D3BDB2 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */; };
 		C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A392BD27D812E7007BC017 /* ImageConfigure.swift */; };
 		C6B49D7227DAC0530014B9A8 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B49D7127DAC0530014B9A8 /* String+Ex.swift */; };
@@ -43,6 +43,7 @@
 		C60A2A1627D435A50093F194 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
 		C65621B227D6C8D70002264A /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		C65621B427D6C9860002264A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		C664560C27DC55A500AF8F26 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		C66E099127D3D81800D3BDB2 /* VideoGamesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoGamesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66E099427D3D81800D3BDB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66E099627D3D81800D3BDB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedGamesViewController.swift; sourceTree = "<group>"; };
-		C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		C6A392BD27D812E7007BC017 /* ImageConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigure.swift; sourceTree = "<group>"; };
 		C6B49D7127DAC0530014B9A8 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
@@ -139,10 +139,10 @@
 				C66E09B227D3DB3400D3BDB2 /* GameListViewController.swift */,
 				C66E09B427D3DB4B00D3BDB2 /* GameScreenViewController.swift */,
 				C66E09B627D3DF9E00D3BDB2 /* LikedGamesViewController.swift */,
-				C66E09B827D3E26F00D3BDB2 /* AlertViewController.swift */,
 				C66E09BA27D3EB1C00D3BDB2 /* UserProfileViewController.swift */,
 				C65621B427D6C9860002264A /* EmptyView.swift */,
 				C65621B227D6C8D70002264A /* EmptyView.xib */,
+				C664560C27DC55A500AF8F26 /* AlertViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,9 +261,9 @@
 				C6DF66D927D4EC2B00ED2C35 /* GameDataModel.swift in Sources */,
 				C66E09B527D3DB4B00D3BDB2 /* GameScreenViewController.swift in Sources */,
 				C66E099727D3D81800D3BDB2 /* SceneDelegate.swift in Sources */,
+				C664560D27DC55A500AF8F26 /* AlertViewController.swift in Sources */,
 				C66E09B127D3D8A100D3BDB2 /* UserLongInViewController.swift in Sources */,
 				C6DF66D727D4EB7F00ED2C35 /* GameListModel.swift in Sources */,
-				C66E09B927D3E26F00D3BDB2 /* AlertViewController.swift in Sources */,
 				C6A392BE27D812E7007BC017 /* ImageConfigure.swift in Sources */,
 				C6DF66EF27D5D2A400ED2C35 /* SlideModel.swift in Sources */,
 				C6B49D7227DAC0530014B9A8 /* String+Ex.swift in Sources */,

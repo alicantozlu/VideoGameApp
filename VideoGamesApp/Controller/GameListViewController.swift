@@ -79,13 +79,24 @@ class GameListViewController: UIViewController {
         gameSearchBar.searchTextField.tintColor = .white
         gameSearchBar.searchTextField.leftView?.tintColor = .white
         
-        bottomCollectionView.backgroundView = EmptyView()
+        let emptyView = EmptyView()
+        emptyView.changeText(text: "GAME NOT FOUND")
+        emptyView.changeImage(imageName: "among1R")
+        bottomCollectionView.backgroundView = emptyView
         bottomCollectionView.backgroundView?.isHidden = true
         
         topCollectionView.register(UINib(nibName: "TopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "topCellIdentity")
         bottomCollectionView.register(UINib(nibName: "BottomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "bottomCellIdentity")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // TabBar Ozellestirmeleri
     private func tabbarConfig() {
         let tabBar = UITabBar.appearance()
