@@ -647,7 +647,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="logInBtnTapped:" destination="4mK-X9-yot" eventType="touchUpInside" id="Epr-RG-1OY"/>
+                                            <action selector="logOutBtnAction:" destination="a4L-fb-9ce" eventType="touchUpInside" id="wKU-mL-RJ9"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-gq-8Is">
